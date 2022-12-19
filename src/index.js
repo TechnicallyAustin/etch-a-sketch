@@ -31,20 +31,25 @@ const sketch = () => {
             document.createElement("div")
           );
           colorChoice.setAttribute("id", "color-choice-div");
-          const colorChoiceLabel = controlList.appendChild(
+          const colorChoiceLabel = colorChoice.appendChild(
             document.createElement("h3")
           );
           colorChoiceLabel.textContent = "pick a Color";
+          const colorMenu = colorChoice.appendChild(document.createElement('select'))
+          const colorMenuItem = colorMenu.appendChild(document.createElement('option'))
+          colorMenuItem.textContent = "Pick a color!"
         };
         createColorChoice();
 
         const createReset = () => {
           const reset = controlList.appendChild(document.createElement("div"));
           reset.setAttribute("id", "reset-choice-div");
-          const resetLabel = controlList.appendChild(
+          const resetLabel = reset.appendChild(
             document.createElement("h3")
           );
-          resetLabel.textContent = "Reset the sketch";
+          resetLabel.textContent = "Reset  sketch";
+          const resetButton = reset.appendChild(document.createElement("button"))
+          resetButton.textContent = "Reset  Sketch"
         };
         createReset();
       };
@@ -79,10 +84,24 @@ const sketch = () => {
           const addGridEventListeners = () => {
             const gridBoxes = document.getElementsByClassName("col");
             for (let i = 0; i < gridBoxes.length; i++) {
-              gridBoxes[i].addEventListener("click", () => {
+                let boxSelector = gridBoxes[i]
+              gridBoxes[i].addEventListener("click", function eventAdder() {
+                boxSelector.setAttribute("class", "grid-container-item hovered col")
                 console.log("I was clicked");
               });
             };
+
+            const createControlActions = () => {
+                const colorPicker = () => {
+                    // lets the user pick a color to fill the grid with
+                }
+                const resetGrid = () => {
+                  // Changes the class of the grid items to remove hovered
+
+                }
+            }
+
+
           };
           addGridEventListeners();
         };
