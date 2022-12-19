@@ -44,7 +44,7 @@ const sketch = () => {
           const resetLabel = controlList.appendChild(
             document.createElement("h3")
           );
-          reset.textContent = "Reset the sketch";
+          resetLabel.textContent = "Reset the sketch";
         };
         createReset();
       };
@@ -62,19 +62,29 @@ const sketch = () => {
             let gridContainerItem = gridContainer.appendChild(
               document.createElement("div")
             );
-            gridContainerItem.setAttribute("class", "grid-container-item col");
+            gridContainerItem.setAttribute("class", "grid-container-item row");
             for (let j = 0; j < 16; j++) {
               let gridContainerItemColumn = gridContainerItem.appendChild(
                 document.createElement("div")
               );
               gridContainerItemColumn.setAttribute(
                 "class",
-                "grid-container-item row"
+                "grid-container-item col"
               );
 
               //console.log("this function creates the Divs")
             }
           }
+
+          const addGridEventListeners = () => {
+            const gridBoxes = document.getElementsByClassName("col");
+            for (let i = 0; i < gridBoxes.length; i++) {
+              gridBoxes[i].addEventListener("click", () => {
+                console.log("I was clicked");
+              });
+            };
+          };
+          addGridEventListeners();
         };
         createGridItems();
       };
