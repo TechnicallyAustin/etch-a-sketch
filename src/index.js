@@ -35,21 +35,26 @@ const sketch = () => {
             document.createElement("h3")
           );
           colorChoiceLabel.textContent = "pick a Color";
-          const colorMenu = colorChoice.appendChild(document.createElement('select'))
-          const colorMenuItem = colorMenu.appendChild(document.createElement('option'))
-          colorMenuItem.textContent = "Pick a color!"
+          const colorMenu = colorChoice.appendChild(
+            document.createElement("select")
+          );
+          const colorMenuItem = colorMenu.appendChild(
+            document.createElement("option")
+          );
+          colorMenuItem.textContent = "Pick a color!";
         };
         createColorChoice();
 
         const createReset = () => {
           const reset = controlList.appendChild(document.createElement("div"));
           reset.setAttribute("id", "reset-choice-div");
-          const resetLabel = reset.appendChild(
-            document.createElement("h3")
+          const resetLabel = reset.appendChild(document.createElement("h3"));
+          resetLabel.textContent = "Reset sketch";
+          const resetButton = reset.appendChild(
+            document.createElement("button")
           );
-          resetLabel.textContent = "Reset  sketch";
-          const resetButton = reset.appendChild(document.createElement("button"))
-          resetButton.textContent = "Reset  Sketch"
+          resetButton.textContent = "Reset Sketch";
+          resetButton.setAttribute("id", "reset-sketch");
         };
         createReset();
       };
@@ -84,24 +89,37 @@ const sketch = () => {
           const addGridEventListeners = () => {
             const gridBoxes = document.getElementsByClassName("col");
             for (let i = 0; i < gridBoxes.length; i++) {
-                let boxSelector = gridBoxes[i]
-              gridBoxes[i].addEventListener("click", function eventAdder() {
-                boxSelector.setAttribute("class", "grid-container-item hovered col")
+              let boxSelector = gridBoxes[i];
+              gridBoxes[i].addEventListener("mouseover", function eventAdder() {
+                boxSelector.setAttribute(
+                  "class",
+                  "grid-container-item hovered col"
+                );
                 console.log("I was clicked");
               });
-            };
-
-            const createControlActions = () => {
-                const colorPicker = () => {
-                    // lets the user pick a color to fill the grid with
-                }
-                const resetGrid = () => {
-                  // Changes the class of the grid items to remove hovered
-
-                }
             }
 
+            const createControlActions = () => {
+              const colorPicker = () => {
+                // lets the user pick a color to fill the grid with
+                console.log("you picked a new color!");
+              };
+              const resetGrid = () => {
+                // Changes the class of the grid items to remove hovered
+                const resetButton = document.getElementById("reset-sketch");
 
+                resetButton.addEventListener("click", () => {
+                  for (let i = 0; i < gridBoxes.length; i++) {
+                    gridBoxes[i].setAttribute(
+                      "class",
+                      "grid-container-item col"
+                    );
+                  }
+                });
+              };
+              resetGrid();
+            };
+            createControlActions();
           };
           addGridEventListeners();
         };
