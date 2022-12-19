@@ -62,14 +62,14 @@ const sketch = () => {
             let gridContainerItem = gridContainer.appendChild(
               document.createElement("div")
             );
-            gridContainerItem.setAttribute("class", "grid-container-item");
+            gridContainerItem.setAttribute("class", "grid-container-item col");
             for (let j = 0; j < 16; j++) {
-              let gridContainerItemColumn = gridContainer.appendChild(
+              let gridContainerItemColumn = gridContainerItem.appendChild(
                 document.createElement("div")
               );
               gridContainerItemColumn.setAttribute(
                 "class",
-                "grid-container-item"
+                "grid-container-item row"
               );
 
               //console.log("this function creates the Divs")
