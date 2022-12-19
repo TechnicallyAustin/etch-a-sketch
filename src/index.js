@@ -1,27 +1,38 @@
 const sketch = () => {
+  const createTitle = () => {
+    const title = document.body.appendChild(document.createElement("h1"));
+    title.textContent = "Technically Sketch";
+    //console.log("This function creates the title")
+  };
+  createTitle();
 
-    const createTitle = () => {
-        const title = document.body.appendChild(document.createElement('h1'));
-        title.textContent = "Technically Sketch"
-    }
-    createTitle();
+  const createControls = () => {
+    const createGridContainer = () => {
+      const gridContainer = document.body.appendChild(
+        document.createElement("div")
+      );
+      gridContainer.setAttribute("class", "grid-container");
 
+      //console.log("This function creates the grid container")
+      const createGridItems = () => {
+        for (let i = 0; i < 16; i++) {
+          let gridContainerItem = gridContainer.appendChild(
+            document.createElement("div")
+          );
+          gridContainerItem.setAttribute("class", "grid-container-item");
 
-  const createGridContainer = () => {
-        const main = document.getElementById("main")
-        const gridContainer = main.appendChild(document.createElement("div"))
-        gridContainer.setAttribute("class", "grid-container");
+          let gridContainerSubItem = gridContainerItem.appendChild(
+            document.createElement("div")
+          );
+          gridContainerSubItem.setAttribute("class", "grid-container-sub-item");
 
-            const createGridItems = () => {
-                for (let i = 0; i < 16; i++) {
-                    let gridContainerItem = gridContainer.appendChild(document.createElement("div"));
-                    gridContainerItem.setAttribute("class", "grid-container-item");
-                }
-            };
-            createGridItems()
+          //console.log("this function creates the Divs")
+        }
+      };
+      createGridItems();
     };
-    createGridContainer()
-
-
+    createGridContainer();
+  };
+  createControls()
 };
-sketch()
+sketch();
