@@ -13,10 +13,12 @@ const sketch = () => {
         gridContainer.setAttribute("class", "grid-container");
 
             const createGridItems = () => {
-                const gridContainerItem = gridContainer.appendChild(document.createElement("div"));
-                gridContainerItem.setAttribute("class", "grid-container-item");
-            } 
-
+                for (let i = 0; i < 16; i++) {
+                    let gridContainerItem = gridContainer.appendChild(document.createElement("div"));
+                    gridContainerItem.setAttribute("class", "grid-container-item");
+                }
+            };
+            createGridItems()
     };
     createGridContainer()
 
