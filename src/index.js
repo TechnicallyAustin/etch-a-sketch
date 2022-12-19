@@ -16,6 +16,28 @@ const sketch = () => {
   const createControls = () => {
     const controlDiv = interface.appendChild(document.createElement("div"))
     controlDiv.setAttribute("class", "control-div")
+
+    const controlOptions = () => {
+        const controlList = controlDiv.appendChild(document.createElement('div'))
+        controlList.setAttribute("id", "control-list-div")
+        const controlListLabel = controlList.appendChild(document.createElement('h2'))
+        controlListLabel.textContent = "Controls"
+
+        const colorChoice =  controlList.appendChild(document.createElement("div"))
+        colorChoice.setAttribute('id', "color-choice-div")
+        const colorChoiceLabel = controlList.appendChild(
+          document.createElement("h3")
+        );
+        colorChoiceLabel.textContent = "pick a Color";
+
+        const reset = controlList.appendChild(document.createElement("div"));
+        reset.setAttribute("id", "reset-choice-div");
+        const resetLabel = controlList.appendChild(
+          document.createElement("h3")
+        );
+        reset.textContent = "Reset the sketch";
+    }
+    controlOptions()
     
     const createGridContainer = () => {
       const gridContainer = interface.appendChild(
