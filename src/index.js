@@ -45,6 +45,15 @@ const sketch = () => {
         };
         createColorChoice();
 
+        const createGridSizeOption = () => {
+          const grid = controlList.appendChild(document.createElement("div"));
+          grid.setAttribute("id", "grid-size");
+          const gridLabel = grid.appendChild(document.createElement("h3"));
+          gridLabel.textContent = "Pick a Grid Size";
+          
+        };
+        createGridSizeOption();
+
         const createReset = () => {
           const reset = controlList.appendChild(document.createElement("div"));
           reset.setAttribute("id", "reset-choice-div");
@@ -57,6 +66,8 @@ const sketch = () => {
           resetButton.setAttribute("id", "reset-sketch");
         };
         createReset();
+
+        
       };
       controlOptions();
 
