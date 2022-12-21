@@ -49,12 +49,16 @@ const sketch = () => {
           const grid = controlList.appendChild(document.createElement("div"));
           grid.setAttribute("id", "grid-choice-div");
           const gridLabel = grid.appendChild(document.createElement("h3"));
-          gridLabel.textContent = "Pick a Grid Size";
+          gridLabel.textContent = "Grid Size";
           const gridSetting = grid.appendChild(document.createElement("input"));
           gridSetting.setAttribute('id', "grid-size-input")
-          gridSetting.setAttribute('value', 'enter a size 1- 100')
+          gridSetting.setAttribute('placeholder', '17- 100')
+          const submitGrid = grid.appendChild(document.createElement('button'))
+          submitGrid.setAttribute('value', 'change')
           // create either a drop down menu or a slider to select grid size
           // adjust the grid size using createGridItems()
+          // add am event listener to the submit button that takes the text from the input button and passes into
+            // createGridItems()
         };
         createGridSizeOption();
 

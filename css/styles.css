@@ -91,4 +91,5 @@ select, button, input {
 #grid-choice-div{
     display: flex;
     gap: 10%;
+    justify-content: center;
 }
