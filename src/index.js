@@ -47,10 +47,14 @@ const sketch = () => {
 
         const createGridSizeOption = () => {
           const grid = controlList.appendChild(document.createElement("div"));
-          grid.setAttribute("id", "grid-size");
+          grid.setAttribute("id", "grid-choice-div");
           const gridLabel = grid.appendChild(document.createElement("h3"));
           gridLabel.textContent = "Pick a Grid Size";
-          
+          const gridSetting = grid.appendChild(document.createElement("input"));
+          gridSetting.setAttribute('id', "grid-size-input")
+          gridSetting.setAttribute('value', 'enter a size 1- 100')
+          // create either a drop down menu or a slider to select grid size
+          // adjust the grid size using createGridItems()
         };
         createGridSizeOption();
 
@@ -78,13 +82,13 @@ const sketch = () => {
         gridContainer.setAttribute("class", "grid-container");
 
         //console.log("This function creates the grid container")
-        const createGridItems = () => {
-          for (let i = 0; i < 16; i++) {
+        const createGridItems = (number = 16) => {
+          for (let i = 0; i < number; i++) {
             let gridContainerItem = gridContainer.appendChild(
               document.createElement("div")
             );
             gridContainerItem.setAttribute("class", "grid-container-item row");
-            for (let j = 0; j < 16; j++) {
+            for (let j = 0; j < number; j++) {
               let gridContainerItemColumn = gridContainerItem.appendChild(
                 document.createElement("div")
               );

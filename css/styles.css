@@ -80,16 +80,15 @@ h2, h3 {
 background-color: black;
 }
 
-
-
-select, button {
+select, button, input {
     padding: 4%;
     width: 12vw;
     text-align: center;
 }
 
 #color-choice-div,
-#reset-choice-div {
+#reset-choice-div,
+#grid-choice-div{
     display: flex;
     gap: 10%;
 }
