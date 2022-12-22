@@ -54,9 +54,16 @@ const sketch = () => {
           gridSetting.setAttribute('id', "grid-size-input")
           gridSetting.setAttribute('placeholder', '17- 100')
           const submitGrid = grid.appendChild(document.createElement('button'))
-          submitGrid.setAttribute('value', 'change')
+          submitGrid.setAttribute('type', 'submit')
+
           // create either a drop down menu or a slider to select grid size
           // adjust the grid size using createGridItems()
+
+          submitGrid.addEventListener('click', () => {
+
+
+            console.log('clicked')
+          })
           // add am event listener to the submit button that takes the text from the input button and passes into
             // createGridItems()
         };
