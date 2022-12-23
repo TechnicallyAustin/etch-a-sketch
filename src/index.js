@@ -59,11 +59,8 @@ const sketch = () => {
           // create either a drop down menu or a slider to select grid size
           // adjust the grid size using createGridItems()
 
-          submitGrid.addEventListener('click', () => {
+          
 
-
-            console.log('clicked')
-          })
           // add am event listener to the submit button that takes the text from the input button and passes into
             // createGridItems()
         };
@@ -144,6 +141,17 @@ const sketch = () => {
                 });
               };
               resetGrid();
+              const changGridSize = () => {
+                const gridSetting = document.getElementById("grid-size-input");
+                gridSetting.addEventListener("click", () => {
+                  // let number = the value from  createGridSetting()
+                  // on click takes the number entered in grid setting and passes it into the
+                  // createGridSettings(number)
+                  let userInput = prompt("select a grid size");
+                  createGridItems(userInput);
+                });
+              };
+              changGridSize()
             };
             createControlActions();
           };
