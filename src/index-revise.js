@@ -10,6 +10,7 @@ function sketch() {
     title.setAttribute("class", "title");
     title.textContent = "Technically Sketch";
   }
+  title(); // calls the title object
 
   function createInterface() {
     // creates the general HTML layout for the page
@@ -48,6 +49,7 @@ function sketch() {
           // reset
         }
       }
+      createControls(); // creates the contol area
 
       function grid() {
         function createGridContainer() {
@@ -63,8 +65,16 @@ function sketch() {
             // responsive resizing.
             // grid occupies the same amount of space.
           };
+
+          const deleteGrid = () => {
+            // to be called after the size change alert
+          };
         }
       }
+      grid(); // calls the grid() object
     }
+    interface(); // calls the interface() object
   }
+  createInterface(); // calls the createInterface() object
 }
+sketch(); // calls the sketch game
