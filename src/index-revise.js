@@ -1,23 +1,19 @@
 function sketch() {
+
   function title() {
     // creates the title
-    // selector
-    // setAttributes
-    const createTitle = document.body.appendChild(
-      document.createElement("div")
-    );
+    const createTitle = document.body.appendChild(document.createElement("div"));
     const title = createTitle.appendChild(document.createElement("h1"));
     title.setAttribute("class", "title");
     title.textContent = "Technically Sketch";
   }
   title(); // calls the title object
 
+
   function createInterface() {
     // creates the general HTML layout for the page
     // creates interface div with id interface
-    const createInterface = document.body.appendChild(
-      document.createElement("div")
-    );
+    const createInterface = document.body.appendChild(document.createElement("div"));
     createInterface.setAttribute("class", "interface");
 
     function interface() {
@@ -26,9 +22,9 @@ function sketch() {
       function createControls() {
         // creates a div with id controls
 
-        const controlOptions = () => {
+        function controlOptions() {
           // creates a div control-options that houses all game controls
-        };
+        
         const createColorChoice = () => {
           // dropDown or new idea allows user to change color
         };
@@ -41,6 +37,7 @@ function sketch() {
             // add event Listeners
           };
         };
+      };
 
         function createControlEventListeners() {
           // createes event listeners for each control
@@ -76,5 +73,7 @@ function sketch() {
     interface(); // calls the interface() object
   }
   createInterface(); // calls the createInterface() object
+
+
 }
 sketch(); // calls the sketch game
