@@ -83,6 +83,22 @@ function techSketch() {
               gridSetting.setAttribute("placeholder", "17- 100");
               const submitGrid = grid.appendChild(document.createElement("button"));
               submitGrid.setAttribute("type", "submit");
+
+              const deleteGrid = () => {
+                const gridBoxes = document.getElementsByClassName("col");
+                for (let i = 0; i > gridBoxes.length; i ++){
+                  gridBoxes[i].remove()
+                }
+              }; deleteGrid()
+
+
+              const changeGrid = () => {
+              gridSetting.addEventListener('click', () => {
+                deleteGrid()
+                let input = prompt('Enter a grid size please')
+                gridContainerItem(input)
+              })
+            }; changeGrid()
             }; gridSize()
               
           
