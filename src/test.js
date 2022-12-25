@@ -117,22 +117,29 @@ function techSketch() {
                 );
                 resetButton.textContent = "Reset Sketch";
                 resetButton.setAttribute("id", "reset-sketch");
-              
-              const actionReset = () => {
-                const gridBoxes = document.getElementsByClassName("col");
-                const resetButton = document.getElementById("reset-sketch");
-                resetButton.addEventListener("click", () => {
-                  for (let i = 0; i < gridBoxes.length; i++) {
-                    gridBoxes[i].setAttribute("class", "grid-container-item col");
-                  }
-                });
-              }; actionReset()
-            }; createReset()
-            }; resetGrid()
 
+                const actionReset = () => {
+                  const gridBoxes = document.getElementsByClassName("col");
+                  const resetButton = document.getElementById("reset-sketch");
+                  resetButton.addEventListener("click", () => {
+                    for (let i = 0; i < gridBoxes.length; i++) {
+                      gridBoxes[i].setAttribute(
+                        "class",
+                        "grid-container-item col"
+                      );
+                    }
+                  });
+                };
+                // grid functions
+                actionReset()
+              }; createReset()
+            }; resetGrid()
+            // control functions
           }; controlDivList()
         }; controlDiv()
       }; controls()
+      // interface functions
     }; interfaceComponents();
   }; interface();
+  // game functions
 }; techSketch();
