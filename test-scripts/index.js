@@ -62,7 +62,7 @@ const sketch = () => {
               colorDropDown.childNodes.forEach(color => {
                 color.addEventListener('click', () => {
                   // toggle the color of the gridboxes
-                  console.log('clicked')
+                  console.log('clicked')``
                 });
               });
             }; colorEventListeners()
