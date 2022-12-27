@@ -45,17 +45,27 @@ const sketch = () => {
           );
           colorChoiceLabel.textContent = "pick a Color";
           const colorMenu = colorChoice.appendChild(
-            document.createElement("select")
+            document.createElement("div")
           );
+          colorMenu.setAttribute('id', 'color-drop-down')
 
           const colorMenuItems = () => {
             for (let i = 0; i < colorArray.length; i++) {
               let color = colorArray[i];
-              color = colorMenu.appendChild(document.createElement("option"));
+              color = colorMenu.appendChild(document.createElement("div"));
               color.setAttribute("id", `${colorArray[i]}`)
-              color.textContent = colorArray[i];
+              //color.textContent = colorArray[i];
+            }
+
+            const colorEventListeners = () => {
+              const colorDropDown = document.getElementById('color-drop-down')
+              colorDropDown.addEventListener('click', () => {
+                console.log("clicked")
+              })
             }
           }; colorMenuItems()
+
+
         };
         createColorChoice();
 
@@ -158,7 +168,9 @@ const sketch = () => {
                   // on click takes the number entered in grid setting and passes it into the
                   // createGridSettings(number)
                   let userInput = prompt("select a grid size");
-                  gridBoxes
+                  for (let i = 0; i > gridBoxes.length; i++){
+                    gridBoxes[i].remove()
+                  }
                   createGridItems(userInput);
                 });
               };

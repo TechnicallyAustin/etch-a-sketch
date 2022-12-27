@@ -56,7 +56,7 @@ h2, h3 {
 }
 
 .control-div {
-    background-color: purple;
+    background-color: black;
     padding: 3%;
     width: 30%;
     display: flex;
@@ -92,3 +92,53 @@ select, button, input {
     gap: 10%;
     justify-content: center;
 }
+
+#color-drop-down {
+    display: flex;
+    width: 10vw;
+    background-color: white;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: black;
+}
+
+#Red,
+#Orange,
+#Yellow,
+#Green,
+#Blue,
+#Indigo,
+#Violet {
+    color: black;
+    padding: 20%;
+}
+
+#Red {
+    background-color: Red;
+}
+
+#Orange {
+    background-color: Orange;
+}
+
+#Yellow {
+    background-color: yellow;
+}
+
+#Green {
+    background-color: green;
+}
+
+#Blue {
+    background-color: blue;
+}
+
+#Indigo {
+    background-color: Indigo;
+}
+
+#Violet {
+    background-color: Violet;
+}
+
