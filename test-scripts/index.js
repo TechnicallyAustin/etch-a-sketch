@@ -20,7 +20,16 @@ const sketch = () => {
       );
       controlDivLabel.textContent = "Controls";
 
-      const controlOptions =  () => {
+      const controlOptions = () => {
+        const colorArray = [
+          "Red",
+          "Orange",
+          "Yellow",
+          "Green",
+          "Blue",
+          "Indigo",
+          "Violey",
+        ];
         const controlList = controlDiv.appendChild(
           document.createElement("div")
         );
@@ -38,10 +47,14 @@ const sketch = () => {
           const colorMenu = colorChoice.appendChild(
             document.createElement("select")
           );
-          const colorMenuItem = colorMenu.appendChild(
-            document.createElement("option")
-          );
-          colorMenuItem.textContent = "Pick a color!";
+
+          const colorMenuItems = () => {
+            for (let i = 0; i < colorArray.length; i++) {
+              let color = colorArray[i];
+              color = colorMenu.appendChild(document.createElement("option"));
+              color.textContent = colorArray[i];
+            }
+          }; colorMenuItems()
         };
         createColorChoice();
 
@@ -140,7 +153,6 @@ const sketch = () => {
               const changGridSize = () => {
                 const gridSetting = document.getElementById("grid-size-input");
                 gridSetting.addEventListener("click", () => {
-
                   // let number = the value from  createGridSetting()
                   // on click takes the number entered in grid setting and passes it into the
                   // createGridSettings(number)
