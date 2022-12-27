@@ -21,12 +21,12 @@ function sketcher() {
 
       function gridFunctions() {
         const createGrid = (number = 16) => {
-          for (let i = 0; i > number; i++) {
+          for (let i = 0; i < number; i++) {
             let gridContainerItem = gridContainer.appendChild(
               document.createElement("div")
             );
             gridContainerItem.setAttribute("class", "grid-container-item row");
-            for (let j = 0; j > number; j++) {
+            for (let j = 0; j < number; j++) {
               let gridContainerItemColumn = gridContainerItem.appendChild(
                 document.createElement("div")
               );
@@ -77,11 +77,9 @@ function sketcher() {
           const resetControl = () => {};
         };
         resetGrid();
-      }
-      gridFunctions();
-    }
-    grid();
-  }
-  interface();
-}
-sketcher();
+
+        
+      } gridFunctions();
+    } grid()
+  } interface()
+} sketcher()

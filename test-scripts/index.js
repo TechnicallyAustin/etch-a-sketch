@@ -140,6 +140,7 @@ const sketch = () => {
               const changGridSize = () => {
                 const gridSetting = document.getElementById("grid-size-input");
                 gridSetting.addEventListener("click", () => {
+
                   // let number = the value from  createGridSetting()
                   // on click takes the number entered in grid setting and passes it into the
                   // createGridSettings(number)
