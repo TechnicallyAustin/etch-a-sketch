@@ -59,10 +59,15 @@ const sketch = () => {
 
             const colorEventListeners = () => {
               const colorDropDown = document.getElementById('color-drop-down')
+
               colorDropDown.childNodes.forEach(color => {
                 color.addEventListener('click', () => {
                   // toggle the color of the gridboxes
-                  console.log('clicked')``
+                  //gridBoxes.setAttribute(
+                  //  "class",
+                  //  `grid-container-item ${color} col`
+                  //);
+                  console.log(`${color.id}`)
                 });
               });
             }; colorEventListeners()
