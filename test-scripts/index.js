@@ -28,7 +28,7 @@ const sketch = () => {
           "Green",
           "Blue",
           "Indigo",
-          "Violey",
+          "Violet",
         ];
         const controlList = controlDiv.appendChild(
           document.createElement("div")
@@ -158,6 +158,7 @@ const sketch = () => {
                   // on click takes the number entered in grid setting and passes it into the
                   // createGridSettings(number)
                   let userInput = prompt("select a grid size");
+                  gridBoxes
                   createGridItems(userInput);
                 });
               };
