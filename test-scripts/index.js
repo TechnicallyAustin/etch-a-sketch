@@ -52,6 +52,7 @@ const sketch = () => {
             for (let i = 0; i < colorArray.length; i++) {
               let color = colorArray[i];
               color = colorMenu.appendChild(document.createElement("option"));
+              color.setAttribute("id", `${colorArray[i]}`)
               color.textContent = colorArray[i];
             }
           }; colorMenuItems()
@@ -66,8 +67,8 @@ const sketch = () => {
           const gridSetting = grid.appendChild(document.createElement("input"));
           gridSetting.setAttribute("id", "grid-size-input");
           gridSetting.setAttribute("placeholder", "17- 100");
-          const submitGrid = grid.appendChild(document.createElement("button"));
-          submitGrid.setAttribute("type", "submit");
+          //const submitGrid = grid.appendChild(document.createElement("button"));
+          //submitGrid.setAttribute("type", "submit");
 
           // create either a drop down menu or a slider to select grid size
           // adjust the grid size using createGridItems()
