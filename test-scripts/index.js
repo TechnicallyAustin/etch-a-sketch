@@ -59,7 +59,7 @@ const sketch = () => {
 
             const colorEventListeners = () => {
               const colorDropDown = document.getElementById('color-drop-down')
-
+              // set 
               colorDropDown.childNodes.forEach(color => {
                 color.addEventListener('click', () => {
                   // toggle the color of the gridboxes
@@ -142,7 +142,7 @@ const sketch = () => {
             const gridBoxes = document.getElementsByClassName("col");
             for (let i = 0; i < gridBoxes.length; i++) {
               let boxSelector = gridBoxes[i];
-              gridBoxes[i].addEventListener("mouseover", function eventAdder() {
+              gridBoxes[i].addEventListener("mousedown", function eventAdder() {
                 boxSelector.setAttribute(
                   "class",
                   "grid-container-item hovered col"
