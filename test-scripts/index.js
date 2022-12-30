@@ -52,7 +52,7 @@ const sketch = () => {
           const colorMenuItems = () => {
             for (let i = 0; i < colorArray.length; i++) {
               let color = colorArray[i];
-              color = colorMenu.appendChild(document.createElement("div"));
+              color = colorMenu.appendChild(document.createElement("checkbox"));
               color.setAttribute("id", `${colorArray[i]}`)
               //color.textContent = colorArray[i];
             }
@@ -67,7 +67,11 @@ const sketch = () => {
                   //  "class",
                   //  `grid-container-item ${color} col`
                   //);
+                  if (color) {
+                                    
                   console.log(`${color.id}`)
+                  }
+                  else {console.log('unchecked')}
                 });
               });
             }; colorEventListeners()
