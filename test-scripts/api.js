@@ -1,4 +1,4 @@
-function sketch() {
+function sketchv3() {
 
     function title() {
         // creates title element
@@ -8,7 +8,8 @@ function sketch() {
         title.setAttribute("class", "title")
         title.setAttribute("id", "title")
         title.textContent = "Technically Sketch"
-    }
+    } 
+    title()
 
     function interface() {
         // creates interface div
@@ -17,6 +18,7 @@ function sketch() {
         interface.setAttribute("id", "interface")
         interface.setAttribute("class", "interface")
     }
+    interface()
 
     function grid() {
         // creates grid div
@@ -25,6 +27,7 @@ function sketch() {
         grid.setAttribute("class", "grid")
         grid.setAttribute("id", "grid")
     }
+    grid()
 
     function controls(){
         // creates  control div
@@ -69,9 +72,15 @@ function sketch() {
 
                 // creates color checkboxes
                     // set color checkbox attributes
-                    
+                    colorsArray.forEach(color => {
+                        let button = colorChoices.appendChild(document.createElement("checkbox"))
+                        button.setAttribute("id",`${color}`)
+                        button.setAttribute("class", `${color}`)
+                    })
+
 
         }
+        colors()
 
 
 
@@ -85,5 +94,7 @@ function sketch() {
                 // create reset button
                 // set reset button attributes
         }
-     }
-}
+     } 
+     controls()
+} 
+sketchv3()
