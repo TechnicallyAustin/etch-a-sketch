@@ -39,8 +39,8 @@ function sketchv3() {
         const controlMenu = interface.appendChild(
           document.createElement("div")
         );
-        controlMenu.setAttribute("class", "control-menu");
-        controlMenu.setAttribute("id", "control-menu");
+        controlMenu.setAttribute("class", "controls");
+        controlMenu.setAttribute("id", "controls");
         
         const controlLabel = controlMenu.appendChild(document.createElement("h2"))
         controlLabel.textContent = "Controls"
@@ -54,13 +54,13 @@ function sketchv3() {
 
         const colors = () => {
           const colorsArray = [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue",
-            "Indigo",
-            "Violet",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "blue",
+            "indigo",
+            "violet",
           ];
 
           //creates color control div - child of control div sub div
@@ -115,6 +115,7 @@ function sketchv3() {
           const size = grid.appendChild(document.createElement("input"))
           size.setAttribute("id", "grid-size-input")
           size.setAttribute("class", "grid-size-input")
+          size.setAttribute("placeholder", "Enter a size 17-100")
         };
 
         // grid size call
@@ -134,6 +135,7 @@ function sketchv3() {
           button.setAttribute("id", "reset")
           button.setAttribute("class", "reset")
           button.setAttribute("value", "reset")
+          button.textContent = "Reset Grid"
         };
 
         // reset call

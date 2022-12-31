@@ -1,16 +1,74 @@
+* {
+    border: 1px solid black;
+}
+
+
 /* Title */
+.title {
+    background-color: red;
+}
 
 
 /* Interface */
-
+.interface {
+    display: flex;
+    justify-content: space-around;
+}
     /* Grid */
+    .grid {
+        background-color: black;
+        width: 60vw;
+        height: 60vh;
+    }
 
     /* Controls */
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+        width: 28vw;
+    }
 
         /* Colors */
+        .color-control {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .red,
+        .orange,
+        .yellow,
+        .green,
+        .blue,
+        .indigo,
+        .violet {
+            padding: 10%
+        }
 
         /* Grid Size */
+        .grid-control {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .grid-size-input {
+            width: 12vw;
+            height: 2vh;
+        }
 
         /* Reset */
+        .reset-control {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .reset {
+            width: 12vw;
+            height: 2vh;
+        }
 
 
