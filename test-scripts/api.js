@@ -28,6 +28,24 @@ function sketchv3() {
         const grid = interface.appendChild(document.createElement("div"));
         grid.setAttribute("class", "grid");
         grid.setAttribute("id", "grid");
+
+        function createGrid(n = 16) {
+            const gridDiv = document.getElementById("grid")
+            for (let i = 0; i < n; i++){
+                let gridItem = gridDiv.appendChild(document.createElement("div"))
+                gridItem.setAttribute("class", "col")
+
+                let col = gridItem.appendChild(document.createElement("div"));
+                col.setAttribute("class", "row");
+            }
+        }
+
+        //creaete grid call
+        createGrid()
+
+
+
+
       };
 
       // grid call

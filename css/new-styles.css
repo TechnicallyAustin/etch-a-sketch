@@ -17,8 +17,27 @@
     /* Grid */
     .grid {
         background-color: black;
-        width: 60vw;
+        width: 60%;
         height: 60vh;
+        display: flex;
+
+    }
+
+    .row {
+
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        
+
+    }
+
+    .col{
+        display: flex;
+        background-color: red;
+        
+        
+
     }
 
     /* Controls */
