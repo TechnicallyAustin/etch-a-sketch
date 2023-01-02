@@ -95,7 +95,7 @@ function sketchv3() {
               document.createElement("checkbox")
             );
             button.setAttribute("id", `${color}`);
-            button.setAttribute("class", `${color}`);
+            button.setAttribute("class", `${color} color-boxes`);
           });
         };
 

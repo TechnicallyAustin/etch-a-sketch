@@ -27,6 +27,16 @@
         flex-direction: column;
         gap: 2%;
         width: 28vw;
+        color: white;
+        background-color: black;
+
+    }
+     #control-label {
+        padding: 4%;
+     }
+
+    h2 {
+        left: 2%;
     }
 
         /* Colors */
@@ -37,14 +47,40 @@
             flex-direction: row-reverse;
         }
 
-        .red,
-        .orange,
-        .yellow,
-        .green,
-        .blue,
-        .indigo,
+        .red{
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .indigo {
+            background-color: indigo;
+        }
         .violet {
-            padding: 10%
+            background-color: violet;
+        }
+
+        .color-choices{
+            display: flex;
+            flex-wrap: wrap;
+            width: auto;
+
+        }
+
+        .color-boxes {
+            padding: 10%;
+            width: 2vw;
+
+            
         }
 
         /* Grid Size */
