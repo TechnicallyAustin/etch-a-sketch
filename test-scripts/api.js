@@ -30,14 +30,40 @@ function sketchv3() {
         grid.setAttribute("id", "grid");
 
         function createGrid(n = 16) {
-            const gridDiv = document.getElementById("grid")
-            for (let i = 0; i < n; i++){
-                let gridItem = gridDiv.appendChild(document.createElement("div"))
-                gridItem.setAttribute("class", "col")
+            //const gridDiv = document.getElementById("grid")
+            //for (let i = 0; i < 16; i++){
+            //    let gridItem = gridDiv.appendChild(document.createElement("div"))
+            //    gridItem.setAttribute("class", "col")
+//
+            //    for (let j = 0; j < 16; j++){
+            //    let col = gridItem.appendChild(document.createElement("div"));
+            //    col.setAttribute("class", "row");
+            //    }
+            //}
 
-                let col = gridItem.appendChild(document.createElement("div"));
-                col.setAttribute("class", "row");
-            }
+
+             for (let i = 0; i < n; i++) {
+               let gridDiv = grid.appendChild(
+                 document.createElement("div")
+               );
+               gridDiv.setAttribute(
+                 "class",
+                 "grid-container-item row"
+               );
+               for (let j = 0; j < n; j++) {
+                 let gridContainerItemColumn = gridDiv.appendChild(
+                   document.createElement("div")
+                 );
+                 gridContainerItemColumn.setAttribute(
+                   "class",
+                   "grid-container-item col"
+                 );
+
+                 //console.log("this function creates the Divs")
+               }
+             }
+
+            
         }
 
         //creaete grid call

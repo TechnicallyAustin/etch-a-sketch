@@ -20,24 +20,22 @@
         width: 60%;
         height: 60vh;
         display: flex;
+        justify-content: center;
 
     }
 
     .row {
-
-        background-color: white;
         display: flex;
         flex-direction: column;
-        
+        flex-wrap: wrap;
+        background-color: white;
+        width: 3vw
 
     }
 
     .col{
-        display: flex;
         background-color: red;
-        
-        
-
+        width: 1vw;
     }
 
     /* Controls */
@@ -47,7 +45,7 @@
         gap: 2%;
         width: 28vw;
         color: white;
-        background-color: black;
+
 
     }
      #control-label {
