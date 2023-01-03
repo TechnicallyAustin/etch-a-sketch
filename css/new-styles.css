@@ -1,127 +1,168 @@
 * {
-    border: 1px solid black;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  border: 1px solid black;
 }
 
+html {
+  height: 100vh;
+  background-color: black;
+}
 
 /* Title */
 .title {
-    background-color: red;
+  background-color: green;
+  padding: 1%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2%;
+  color: white;
 }
-
 
 /* Interface */
 .interface {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 2%;
+  height: 80vh;
 }
-    /* Grid */
-    .grid {
-        background-color: black;
-        width: 60%;
-        height: 60vh;
-        display: flex;
-        justify-content: center;
+/* Grid */
+.grid-container {
+  display: flex;
+  align-items: center;
 
-    }
+  
+}
+.grid {
+  background-color: black;
+  width: 45vw;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  border: 10px solid green;
+  border-radius: 10px;
+  padding: 2%;
+}
 
-    .row {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-color: white;
-        width: 3vw
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: whitbe;
+}
 
-    }
+.row {
+  background-color: white;
+  width: 2vw;
+  height: 2vh;
+  padding: 2%;
+  flex: 1;
+  border: 1px solid black;
+}
 
-    .col{
-        background-color: red;
-        width: 1vw;
-    }
+/* Controls */
+.control-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 2%;
+}
 
-    /* Controls */
-    .controls {
-        display: flex;
-        flex-direction: column;
-        gap: 2%;
-        width: 28vw;
-        color: white;
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 45vh;
+  color: white;
+  border:10px solid green;
+  padding: 2%;
+  border-radius: 10px;
+}
+#control-label {
+  padding: 4%;
+}
 
+.control-menu-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 45vh;
+}
 
-    }
-     #control-label {
-        padding: 4%;
-     }
+h2 {
+  left: 2%;
+}
 
-    h2 {
-        left: 2%;
-    }
+/* Colors */
+.color-control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+}
 
-        /* Colors */
-        .color-control {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: row-reverse;
-        }
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.indigo {
+  background-color: indigo;
+}
+.violet {
+  background-color: violet;
+}
 
-        .red{
-            background-color: red;
-        }
-        .orange {
-            background-color: orange;
-        }
-        .yellow {
-            background-color: yellow;
-        }
-        .green {
-            background-color: green;
-        }
-        .blue {
-            background-color: blue;
-        }
-        .indigo {
-            background-color: indigo;
-        }
-        .violet {
-            background-color: violet;
-        }
+.color-choices {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+}
 
-        .color-choices{
-            display: flex;
-            flex-wrap: wrap;
-            width: auto;
+.color-boxes {
+  padding: 10%;
+  width: 2vw;
+}
 
-        }
+/* Grid Size */
+.grid-control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-        .color-boxes {
-            padding: 10%;
-            width: 2vw;
+.grid-size-input {
+  width: 12vw;
+  height: 2vh;
+}
 
-            
-        }
+/* Reset */
+.reset-control {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-        /* Grid Size */
-        .grid-control {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .grid-size-input {
-            width: 12vw;
-            height: 2vh;
-        }
-
-        /* Reset */
-        .reset-control {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .reset {
-            width: 12vw;
-            height: 2vh;
-        }
-
-
+.reset {
+  width: 12vw;
+  height: 2vh;
+}

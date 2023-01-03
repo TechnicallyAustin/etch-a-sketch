@@ -25,7 +25,10 @@ function sketchv3() {
       function grid() {
         // creates grid div
         // sets grid attributes
-        const grid = interface.appendChild(document.createElement("div"));
+        const gridContainer = interface.appendChild(document.createElement("div"))
+        gridContainer.setAttribute("class", "grid-container")
+
+        const grid = gridContainer.appendChild(document.createElement("div"));
         grid.setAttribute("class", "grid");
         grid.setAttribute("id", "grid");
 
@@ -48,7 +51,7 @@ function sketchv3() {
                );
                gridDiv.setAttribute(
                  "class",
-                 "grid-container-item row"
+                 "grid-container-item col"
                );
                for (let j = 0; j < n; j++) {
                  let gridContainerItemColumn = gridDiv.appendChild(
@@ -56,7 +59,7 @@ function sketchv3() {
                  );
                  gridContainerItemColumn.setAttribute(
                    "class",
-                   "grid-container-item col"
+                   "grid-container-item row"
                  );
 
                  //console.log("this function creates the Divs")
@@ -80,7 +83,11 @@ function sketchv3() {
       function controls() {
         // creates  control div
         // creates control div sub div
-        const controlMenu = interface.appendChild(
+        const controlContainer = interface.appendChild(document.createElement("div"))
+        controlContainer.setAttribute("class", "control-container")
+
+
+        const controlMenu = controlContainer.appendChild(
           document.createElement("div")
         );
         controlMenu.setAttribute("class", "controls");
