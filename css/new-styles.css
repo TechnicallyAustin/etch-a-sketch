@@ -19,7 +19,7 @@ html {
   display: flex;
   align-items: center;
   padding-left: 4%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 32px;
   font-weight: bold;
   letter-spacing: 2%;
@@ -38,8 +38,6 @@ html {
 .grid-container {
   display: flex;
   align-items: center;
-
-  
 }
 .grid {
   background-color: black;
@@ -82,8 +80,8 @@ html {
   width: 30vw;
   height: 45vh;
   color: white;
-  border:10px solid green;
-  padding: 2%;
+  border: 10px solid green;
+  padding: 8%;
   border-radius: 10px;
 }
 #control-label {
@@ -103,12 +101,6 @@ h2 {
 }
 
 /* Colors */
-.color-control {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row-reverse;
-}
 
 .red {
   background-color: red;
@@ -135,34 +127,51 @@ h2 {
 .color-choices {
   display: flex;
   flex-wrap: wrap;
-  width: auto;
+  flex-direction: column;
+  overflow-x: scroll;
+  height: 12vh;
+  width: 12vw;
+  justify-content: center;
 }
 
 .color-boxes {
-  padding: 10%;
   width: 2vw;
+  height: 2vh;
+  padding: 15%;
 }
 
 /* Grid Size */
-.grid-control {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
 .grid-size-input {
-  width: 12vw;
+  width: 14vw;
   height: 2vh;
+  padding: 4%;
 }
 
 /* Reset */
+.grid-control,
+.color-control,
 .reset-control {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 30vw;
+  padding-left: 0;
+}
+
+.color-control {
+  gap: 18%;
+  height: 12vh;
 }
 
 .reset {
-  width: 12vw;
-  height: 2vh;
+  width: 14vw;
+  height: 4vh;
+  padding: 4%;
 }
+
+
+
+
+
+

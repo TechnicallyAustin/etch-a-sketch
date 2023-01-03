@@ -122,13 +122,6 @@ function sketchv3() {
           colorsDiv.setAttribute("class", "color-control");
           colorsDiv.setAttribute("id", "color-control");
 
-          // creates colorChoices div
-          const colorChoices = colorsDiv.appendChild(
-            document.createElement("div")
-          );
-          colorChoices.setAttribute("class", "color-choices");
-          colorChoices.setAttribute("id", "color-choices");
-
           // creates color div h3
           // sets color div attributes
           // sets color div h3 text content
@@ -138,6 +131,13 @@ function sketchv3() {
           colorLabel.textContent = "Colors";
           colorLabel.setAttribute("class", "color-label");
           colorLabel.setAttribute("id", "color-label");
+
+          // creates colorChoices div
+          const colorChoices = colorsDiv.appendChild(
+            document.createElement("div")
+          );
+          colorChoices.setAttribute("class", "color-choices");
+          colorChoices.setAttribute("id", "color-choices");
 
           // creates color checkboxes
           // set color checkbox attributes
