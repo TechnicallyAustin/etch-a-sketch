@@ -124,6 +124,10 @@ h2 {
   background-color: violet;
 }
 
+.black {
+    background-color: black;
+}
+
 .color-choices {
   display: flex;
   flex-wrap: wrap;
@@ -138,6 +142,7 @@ h2 {
   width: 2vw;
   height: 2vh;
   padding: 15%;
+  border: 1px solid white;
 }
 
 /* Grid Size */
