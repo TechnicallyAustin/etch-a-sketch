@@ -11,12 +11,21 @@ function sketchActions() {
     const gridBoxesEvents = () => {
       for (let i = 0; i < gridBoxesSelector.length; i++) {
         let box = gridBoxesSelector[i];
+        // adds a click based event listenerr to all boxes
         box.addEventListener("click", () => {
           for (let j = 0; j < gridBoxesSelector.length; j++) {
             let box = gridBoxesSelector[j];
-            box.addEventListener("mouseover", () => {
+            // changes grid boxes event listener to mouse enter after a box is clicked
+            box.addEventListener("mouseenter", () => {
               box.setAttribute("class", "grid-container-item row blue"); // this needs to take the output from color event listeners
-              console.log("hovered");
+              // changes the grird boxes event back to a click to stop drawing in boxes
+                box.addEventListener('click', () => {
+                  // once clicked this should remove the event listeners from the grid
+                    // after a color has been clicked, add event listeners to the grid for that color
+                  box.setAttribute('class', "grid-container-item row")
+                  console.log("toggle")
+                  
+                })
             });
           }
         });
@@ -43,8 +52,12 @@ function sketchActions() {
       for (let i = 0; i < colorsSelector.length; i++) {
         let color = colorsSelector[i];
         color.addEventListener("click", () => {
-          //return color.id
-          console.log(`${color.id}`);
+          for (let j = 0; j < gridBoxesSelector.length; j++){
+            let box = gridBoxesSelector[j];
+            box.addEventListener("mouseenter", () => {
+            box.setAttribute("class", `grid-container-item row ${color.id}`)
+            })
+          }
         });
       }
     };
@@ -58,7 +71,15 @@ function sketchActions() {
   // resets the grid back to the starting position
   function resetGrid() {
     const resetSelector = document.getElementById("reset");
-    const clearGrid = () => {};
+    const clearGrid = () => {
+       reset.addEventListener("click", () => {
+         for (let k = 0; k < gridBoxesSelector.length; k++) {
+           let box = gridBoxesSelector[k];
+           box.setAttribute("class", "grid-container-item row");
+           console.log("toggle");
+         }
+       });
+    };
 
     // adds reset button event listeners
     const resetEvents = () => {
