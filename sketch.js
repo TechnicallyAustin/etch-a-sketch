@@ -76,15 +76,14 @@ function sketchActions() {
          for (let k = 0; k < gridBoxesSelector.length; k++) {
            let box = gridBoxesSelector[k];
            box.setAttribute("class", "grid-container-item row");
-           console.log("toggle");
          }
        });
-    };
+    }; clearGrid()
 
     // adds reset button event listeners
     const resetEvents = () => {
       resetSelector.addEventListener("click", () => {
-        console.log("reset clicked");
+        clearGrid()
       });
     };
     resetEvents();
