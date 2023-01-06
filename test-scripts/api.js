@@ -146,7 +146,6 @@ function sketchv3() {
         size.setAttribute("class", "grid-size-input");
         size.setAttribute("placeholder", "Enter a size 17-100");
       };
-
       // grid size call
       gridSize();
 

@@ -5,7 +5,7 @@ function sketchActions() {
   function gridSize() {
     const inputSelector = document.getElementById("grid-size-input");
 
-    const changeSize = () => {};
+    
 
     // adds grid box event listeneres
     const gridBoxesEvents = () => {
@@ -37,11 +37,33 @@ function sketchActions() {
     const gridInputs = () => {
       inputSelector.addEventListener("click", () => {
         input = prompt("Enter a size 17 - 100");
-        console.log(input);
+
         //return input
       });
     };
     gridInputs();
+
+    const changeSize = (input) => {
+      
+      const deleteGrid = () => {
+        const grid = document.getElementById("grid");
+        const gridColumns = document.getElementsByClassName(
+          "grid-container-item col"
+        );
+        for (let i = 0; i > gridColumns.length; i++) {
+          let child = gridColumns[i];
+          grid.removeChild(child);
+        }
+      };
+      deleteGrid();
+
+
+
+
+
+    }; changeSize
+
+
   }
   gridSize();
 
