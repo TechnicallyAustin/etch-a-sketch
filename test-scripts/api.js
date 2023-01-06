@@ -43,7 +43,7 @@ function sketchv3() {
               "class",
               "grid-container-item row"
             );
-
+      
             //console.log("this function creates the Divs")
           }
         }

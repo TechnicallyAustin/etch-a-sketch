@@ -5,6 +5,7 @@ function sketchActions() {
   function gridSize() {
     const inputSelector = document.getElementById("grid-size-input");
 
+
     
 
     // adds grid box event listeneres
@@ -33,18 +34,7 @@ function sketchActions() {
     };
     gridBoxesEvents();
 
-    // adds grid size input evenet listeners
-    const gridInputs = () => {
-      inputSelector.addEventListener("click", () => {
-        input = prompt("Enter a size 17 - 100");
 
-        //return input
-      });
-    };
-    gridInputs();
-
-    const changeSize = (input) => {
-      
       const deleteGrid = () => {
         const grid = document.getElementById("grid");
         const gridColumns = document.getElementsByClassName(
@@ -53,15 +43,36 @@ function sketchActions() {
         for (let i = 0; i > gridColumns.length; i++) {
           let child = gridColumns[i];
           grid.removeChild(child);
+          console.log(child);
         }
       };
       deleteGrid();
 
+    // adds grid size input evenet listeners
+
+    const changeSize = () => {
+
+       const gridInputs = () => {
+         inputSelector.addEventListener("click", () => {
+           input = prompt("Enter a size 17 - 100");
+           deleteGrid()
+
+           //return input
+         });
+       };
+       gridInputs();
 
 
+      const deleteGrid = () => {
+        const grid = document.getElementById("grid");
+        for (let i = 0; i < gridBoxesSelector.length; i++) {
+          gridBoxesSelector[i].remove()
 
 
-    }; changeSize
+        }
+      };
+
+    }; changeSize()
 
 
   }
@@ -85,8 +96,7 @@ function sketchActions() {
     };
     colorEvents();
 
-    const changeColor = (color) => {};
-    changeColor(colorEvents);
+
   }
   gridColor();
 
