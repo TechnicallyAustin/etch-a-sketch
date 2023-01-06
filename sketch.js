@@ -36,17 +36,29 @@ function sketchActions() {
 
 
       const deleteGrid = () => {
+        // selects the grid
         const grid = document.getElementById("grid");
-        const gridColumns = document.getElementsByClassName(
-          "grid-container-item col"
-        );
-        for (let i = 0; i > gridColumns.length; i++) {
-          let child = gridColumns[i];
-          grid.removeChild(child);
-          console.log(child);
+        // selects grid children
+        const gridChildren = grid.childNodes
+
+        while (grid.lastElementChild) {
+          grid.firstElementChild.remove()
         }
-      };
-      deleteGrid();
+      }
+
+      const newGridSize = (number) => {
+      const grid = document.getElementById("grid")
+        for (let i = 0; i < number; i++){
+          let column = grid.appendChild(document.createElement("div"))
+          column.setAttribute("class", "grid-container-item col")
+          for (let j = 0; j < number; j++){
+            let row = column.appendChild(document.createElement("div"))
+            row.setAttribute("class", "grid-container-item row")
+          }
+
+        }
+      }
+
 
     // adds grid size input evenet listeners
 
@@ -56,22 +68,23 @@ function sketchActions() {
          inputSelector.addEventListener("click", () => {
            input = prompt("Enter a size 17 - 100");
            deleteGrid()
-
+           newGridSize(input)
            //return input
          });
        };
        gridInputs();
 
 
-      const deleteGrid = () => {
-        const grid = document.getElementById("grid");
-        for (let i = 0; i < gridBoxesSelector.length; i++) {
-          gridBoxesSelector[i].remove()
-
-
-        }
-      };
-
+      //const deleteGrid = () => {
+      //  const grid = document.getElementById("grid");
+      //  for (let i = 0; i < gridBoxesSelector.length; i++) {
+      //    gridBoxesSelector[i].remove()
+      //    
+//
+//
+      //  }
+      //};
+//
     }; changeSize()
 
 
