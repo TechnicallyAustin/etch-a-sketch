@@ -100,6 +100,9 @@ h2 {
 }
 
 /* Colors */
+.default {
+    background-color: black;
+}
 
 .red {
   background-color: red;
