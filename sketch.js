@@ -13,26 +13,65 @@ function sketchActions() {
       for (let i = 0; i < gridBoxesSelector.length; i++) {
         let box = gridBoxesSelector[i];
         // adds a click based event listenerr to all boxes
-        box.addEventListener("click", () => {
+        box.addEventListener("click", function gridBoxClick()  {
+
+
           for (let j = 0; j < gridBoxesSelector.length; j++) {
             let box = gridBoxesSelector[j];
             // changes grid boxes event listener to mouse enter after a box is clicked
-            box.addEventListener("mouseenter", () => {
+            box.addEventListener("mouseenter", function gridBoxEnter() {
+              console.log("mouse enter")
               box.setAttribute("class", "grid-container-item row blue"); // this needs to take the output from color event listeners
               // changes the grird boxes event back to a click to stop drawing in boxes
-                box.addEventListener('click', () => {
-                  // once clicked this should remove the event listeners from the grid
-                    // after a color has been clicked, add event listeners to the grid for that color
-                  box.setAttribute('class', "grid-container-item row")
-                  console.log("toggle")
-                  
-                })
             });
           }
+
+         
         });
       }
-    };
-    gridBoxesEvents();
+    }; gridBoxesEvents();
+
+
+    const gridEventsv2 = () => {
+
+
+      const gridStart = () => {
+        const gridBoxes = document.getElementsByClassName("row")
+        for (let i = 0; i < gridBoxes.length; i ++){
+          let box = gridBoxes[i]
+          // sets a click even on each box
+        }
+
+        
+
+      }
+
+      const gridEnter = () => {
+        for (let i = 0; i < gridBoxes.length; i++) {
+          let box = gridBoxes[i];
+          // sets a mouse enter event on each box
+        }
+
+
+      } // sets mouse enter events
+
+      const gridStop = () => {
+        for (let i = 0; i < gridBoxes.length; i++) {
+          let box = gridBoxes[i];
+          // removes the grid start event on each box
+        }
+
+
+
+      } 
+
+
+
+
+    }
+
+
+
 
 
       const deleteGrid = () => {
