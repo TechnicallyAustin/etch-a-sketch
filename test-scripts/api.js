@@ -43,6 +43,7 @@ function sketchv3() {
               "class",
               "grid-container-item row"
             );
+            gridContainerItemColumn.setAttribute("value", "off")
       
             //console.log("this function creates the Divs")
           }
@@ -83,17 +84,6 @@ function sketchv3() {
       controlMenuDiv.setAttribute("id", "control-menu-div");
 
       const colors = () => {
-        const colorsArray = [
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "blue",
-          "indigo",
-          "violet",
-          "black",
-        ];
-
         //creates color control div - child of control div sub div
         // set's div attributes
         const colorsDiv = controlMenuDiv.appendChild(
@@ -117,15 +107,14 @@ function sketchv3() {
         colorChoices.setAttribute("class", "color-choices");
         colorChoices.setAttribute("id", "color-choices");
 
-        // creates color checkboxes
-        // set color checkbox attributes
-        colorsArray.forEach((color) => {
-          let button = colorChoices.appendChild(
-            document.createElement("checkbox")
-          );
-          button.setAttribute("id", `${color}`);
-          button.setAttribute("class", `${color} color-boxes`);
-        });
+        const colorPicker = colorChoices.appendChild(document.createElement("input"))
+        colorPicker.setAttribute("type", "color")
+        colorPicker.setAttribute("value", "#000000")
+
+        const colorPickerLabel = colorChoices.appendChild(document.createElement("label"))
+        colorPickerLabel.setAttribute("class", "color-input")
+        colorPickerLabel.setAttribute("name", "grid-color")
+        
       };
 
       // color call

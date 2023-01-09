@@ -5,87 +5,57 @@ function sketchActions() {
   function gridSize() {
     const inputSelector = document.getElementById("grid-size-input");
 
-    // adds grid box event listeneres
-    //const gridBoxesEvents = () => {
-    //  for (let i = 0; i < gridBoxesSelector.length; i++) {
-    //    let box = gridBoxesSelector[i];
-    //    // adds a click based event listenerr to all boxes
-    //    box.addEventListener("click", function gridBoxClick() {
-    //      for (let j = 0; j < gridBoxesSelector.length; j++) {
-    //        let box = gridBoxesSelector[j];
-    //        // changes grid boxes event listener to mouse enter after a box is clicked
-    //        box.addEventListener("mouseenter", function gridBoxEnter() {
-    //          console.log("mouse enter");
-    //          box.setAttribute("class", "grid-container-item row blue"); // this needs to take the output from color event listeners
-    //          // changes the grird boxes event back to a click to stop drawing in boxes
-    //        });
-    //      }
-    //    });
-    //  }
-    //};
-    //gridBoxesEvents();
-
-    const gridEventsv2 = () => {
+    const gridEvents = () => {
       const gridBoxes = document.getElementsByClassName("row");
 
-      const toggle = () => {
-        if ("ON") {
-          // draw
-        }
-        else {
-          // turn draw off
-
-        }
-      }
-
       const draw = () => {
-        for (let i = 0; i < gridBoxes.length; i++){
-          let box = gridBoxes[i]
-          box.addEventListener("mouseenter", () => {
-            box.setAttribute("class", "grid-container-item row default")
-          })
+        for (let i = 0; i < gridBoxes.length; i++) {
+          let box = gridBoxes[i];
+          box.addEventListener("mouseenter", (drawAction) => {
+            box.setAttribute("class", "grid-container-item row default");
+            box.setAttribute("value", "on");
+          });
         }
-      }
+      };
 
       const stopDraw = () => {
-        for (let i = 0; i < gridBoxes.length; i++){
+        for (let i = 0; i < gridBoxes.length; i++) {
           let box = gridBoxes[i];
-          box.removeEventListener("mouseenter",() =>{
-            console.log("removed Draw")
-          })
+          box.removeEventListener("mouseenter", (drawAction) => {
+            box.setAttribute("class", "grid-container-item row default");
+            box.setAttribute("value", "off");
+          });
         }
+      };
 
-      }
+      const toggle = () => {  
+        console.log("toggle hit");
+        for (let i = 0; i < gridBoxes.length; i++) {
+          let box = gridBoxes[i];
 
-      const gridEnter = () => {
-        // sets a mouse enter event on each box
-        //for (let i = 0; i < gridBoxes.length; i++) {
-        //  let box = gridBoxes[i];
-        //  box.addEventListener("mouseenter", draw() )
-        //}
-      }; // sets mouse enter events
+          if (box.getAttribute("value") === "off") {
+            // draw
+            console.log("toggled on");
+            draw()
+          } else {
+            // turn draw off
+            stopDraw()
+            console.log("toggled off");
+            //box.removeEventListener("mouseenter", draw);
+          }
+        }
+      };
 
       const gridStart = () => {
         // sets a click even on each box
         for (let i = 0; i < gridBoxes.length; i++) {
           let box = gridBoxes[i];
-          box.addEventListener("click", () => {
-            draw()
-            console.log("Grid Start start draw")
-          });
+          box.addEventListener("click", toggle);
         }
       };
       gridStart();
-
-
-
-      const gridStop = () => {
-        for (let i = 0; i < gridBoxes.length; i++) {
-          let box = gridBoxes[i];
-          // removes the grid start event on each box
-        }
-      };
-    }; gridEventsv2()
+    };
+    gridEvents();
 
     const deleteGrid = () => {
       // selects the grid
@@ -118,7 +88,7 @@ function sketchActions() {
           input = prompt("Enter a size 17 - 100");
           deleteGrid();
           newGridSize(input);
-          gridEventsv2()
+          gridEventsv2();
           //return input
         });
       };
@@ -136,7 +106,7 @@ function sketchActions() {
       //
     };
     changeSize();
-  };
+  }
   gridSize();
 
   function gridColor() {
