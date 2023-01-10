@@ -28,7 +28,7 @@ function sketchActions() {
         }
       };
 
-      const toggle = () => {  
+      const toggle = () => {
         console.log("toggle hit");
         for (let i = 0; i < gridBoxes.length; i++) {
           let box = gridBoxes[i];
@@ -110,24 +110,23 @@ function sketchActions() {
   gridSize();
 
   function gridColor() {
-    const colorsSelector = document.getElementsByClassName("color-boxes");
-    // adds event listeners for each color button, returns the id of the color
-    const colorEvents = () => {
-      for (let i = 0; i < colorsSelector.length; i++) {
-        let color = colorsSelector[i];
-        color.addEventListener("click", () => {
-          for (let j = 0; j < gridBoxesSelector.length; j++) {
-            let box = gridBoxesSelector[j];
-            box.addEventListener("mouseenter", () => {
-              box.setAttribute("class", `grid-container-item row ${color.id}`);
-            });
-          }
-        });
-      }
-    };
-    colorEvents();
+    //const colorsSelector = document.getElementsByClassName("color-boxes");
+    //// adds event listeners for each color button, returns the id of the color
+    //const colorEvents = () => {
+    //  for (let i = 0; i < colorsSelector.length; i++) {
+    //    let color = colorsSelector[i];
+    //    color.addEventListener("click", () => {
+    //      for (let j = 0; j < gridBoxesSelector.length; j++) {
+    //        let box = gridBoxesSelector[j];
+    //        box.addEventListener("mouseenter", () => {
+    //          box.setAttribute("class", `grid-container-item row ${color.id}`);
+    //        });
+    //      }
+    //    });
+    //  }
+    //};
+    //colorEvents();
   }
-  gridColor();
 
   // resets the grid back to the starting position
   function resetGrid() {
