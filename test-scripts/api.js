@@ -30,6 +30,7 @@ function sketchv3() {
       const grid = gridContainer.appendChild(document.createElement("div"));
       grid.setAttribute("class", "grid");
       grid.setAttribute("id", "grid");
+      grid.setAttribute("value", "off");
 
       function createGrid(n = 16) {
         for (let i = 0; i < n; i++) {
