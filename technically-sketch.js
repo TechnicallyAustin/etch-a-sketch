@@ -2,21 +2,21 @@ function sketch() {
   function interface() {
     function grid() {
       const gridSelector = document.querySelector(".grid");
-      gridSelector.setAttribute("value", 'off')
       const gridCol = gridSelector.childNodes;
 
 
       function controls() {
         function colors() {
           const colorize = () => {};
-          gridStart = () => {
+
+          gridStart = (evt) => {
                     const colorInput = document.querySelector(".color-input");
-                    let color = colorInput.getAttribute("value"); // gets the hex code for the color
-                    row.setAttribute(
+                    let color = colorInput.value; // gets the hex code for the color
+                    evt.target.setAttribute(
                       "class",
                       `grid-container-item row ${color}`
                     );
-                    row.setAttribute("style", `background-color:${color}`);
+                    evt.target.setAttribute("style", `background-color:${color}`);
                     console.log(color);
                   };
           function draw() {
@@ -67,7 +67,7 @@ function sketch() {
               gridSelector.setAttribute("value", 'on');
               draw();
             } else {
-                gridSelector.setAttribute("value", 'on')
+                gridSelector.setAttribute("value", 'off')
               stopDraw();
             }
           } // toggles between draw() and stopDraw() given a mouse click
