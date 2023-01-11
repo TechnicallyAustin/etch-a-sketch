@@ -5,22 +5,33 @@ function sketch() {
         function grid() {
             const gridSelector = document.querySelector(".grid")
             const gridCol = gridSelector.childNodes
-            const gridItem = () => {
-                for (let i = 0; i < gridCol.length; i++){
-                    let gridBox = gridCol[i].childNodes
-                    console.log(gridBox)
-                }
-            }
+            
+
+            
 
             function controls() {
 
                 function colors() {
                     const colorInput = document.querySelector(".color-input")
                     let color = colorInput.value // gets the hex code for the color
-                   
+                    const colorize = () => {}
                     function draw() {
-                        gridItem()
+
+                        gridCol.forEach(col => {
+                            let rows = col.childNodes
+                            rows.forEach(row => {
+                                row.addEventListener("click", () => {
+                                        const colorInput = document.querySelector(".color-input");
+                                        let color = colorInput.value; // gets the hex code for the color
+                                        row.setAttribute("class", `grid-container-item row ${color}`);
+                                        row.setAttribute('style', `background-color:${color}`)
+                                        console.log(color);
+                                    })
+                                })
+                        })
                     }; draw() // contains logic to fill grid boxes with color on mouse down
+
+
                     function stopDraw() {} // removes/change event listeners so that boxes will not be drawn in mouseup
                     function toggle() {} // toggles between draw() and stopDraw() given a mouse click
 
@@ -54,8 +65,8 @@ function sketch() {
                     function resetEvents() {}
                     
                 } // resets all grid boxes
-            }
+            }; controls()
 
-        }
-    }
-}
+        }; grid()
+    }; interface()
+}; sketch()

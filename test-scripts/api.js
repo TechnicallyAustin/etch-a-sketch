@@ -109,7 +109,7 @@ function sketchv3() {
 
         const colorPicker = colorChoices.appendChild(document.createElement("input"))
         colorPicker.setAttribute("type", "color")
-        colorPicker.setAttribute("value", "#000000")
+        colorPicker.setAttribute("value", "#FFFFFF")
         colorPicker.setAttribute("class", "color-input")
 
         const colorPickerLabel = colorChoices.appendChild(document.createElement("label"))
