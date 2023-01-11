@@ -32,27 +32,27 @@ function sketchv3() {
       grid.setAttribute("id", "grid");
       grid.setAttribute("value", "off");
 
-      function createGrid(n = 16) {
-        for (let i = 0; i < n; i++) {
-          let gridDiv = grid.appendChild(document.createElement("div"));
-          gridDiv.setAttribute("class", "grid-container-item col");
-          for (let j = 0; j < n; j++) {
-            let gridContainerItemColumn = gridDiv.appendChild(
-              document.createElement("div")
-            );
-            gridContainerItemColumn.setAttribute(
-              "class",
-              "grid-container-item row"
-            );
-            gridContainerItemColumn.setAttribute("value", "off")
-      
-            //console.log("this function creates the Divs")
-          }
-        }
-      }
-
-      //creaete grid call
-      createGrid();
+      //function createGrid(n = 16) {
+      //  for (let i = 0; i < n; i++) {
+      //    let gridDiv = grid.appendChild(document.createElement("div"));
+      //    gridDiv.setAttribute("class", "grid-container-item col");
+      //    for (let j = 0; j < n; j++) {
+      //      let gridContainerItemColumn = gridDiv.appendChild(
+      //        document.createElement("div")
+      //      );
+      //      gridContainerItemColumn.setAttribute(
+      //        "class",
+      //        "grid-container-item row"
+      //      );
+//
+      //
+      //      //console.log("this function creates the Divs")
+      //    }
+      //  }
+      //}
+//
+      ////creaete grid call
+      //createGrid();
     }
 
     // grid call
@@ -110,7 +110,7 @@ function sketchv3() {
 
         const colorPicker = colorChoices.appendChild(document.createElement("input"))
         colorPicker.setAttribute("type", "color")
-        colorPicker.setAttribute("value", "#FFFFFF")
+        colorPicker.setAttribute("value", "#000000")
         colorPicker.setAttribute("class", "color-input")
 
         const colorPickerLabel = colorChoices.appendChild(document.createElement("label"))

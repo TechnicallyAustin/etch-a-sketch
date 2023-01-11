@@ -7,7 +7,6 @@ function sketch() {
 
       function controls() {
         function colors() {
-          const colorize = () => {};
 
           gridStart = (evt) => {
                     const colorInput = document.querySelector(".color-input");
@@ -87,14 +86,41 @@ function sketch() {
         colors(); // controls color options on the grid
 
         function size() {
-          function deleteGrid() {} // rmeoves thee grid
+            const gridSizeInput = document.getElementById("grid-size-input")
+          function deleteGrid() {
+          while (gridSelector.firstElementChild) {
+            gridSelector.lastElementChild.remove()
+          }
+          }; // rmeoves the grid
 
-          function newGridSize(num) {} // given the input creates the desired grid size
+          function newGridSize(num) {
+            if (num < 100) {
+            for (let i = 0; i < num; i++){
+                // columns
+                let column = gridSelector.appendChild(document.createElement("div"))
+                column.setAttribute("class", "grid-container-item col")
+                for (let j = 0; j < num; j++){
+                    //rows
+                    let row = column.appendChild(document.createElement("div"))
+                    row.setAttribute("class", "grid-container-item-row")
+                }
+            }
+        } else {alert("Enter a number below 100")}
+
+          }; // given the input creates the desired grid size
 
           function changeSize() {
-            const gridInputs = () => {}; // return grid size input
-          } // adds event listeners to the grid
-        } // controls the size of the grid
+            const gridInputs = () => {
+                gridSizeInput.addEventListener("click", () => {
+                    let input = prompt("eneter a grid size")
+                    console.log(input)
+                    deleteGrid();
+                    newGridSize(input)
+
+                })
+            }; gridInputs()// return grid size input
+          }; changeSize() // adds event listeners to the grid
+        }; size() // controls the size of the grid
 
         function eraser() {} // removes a drawn grid box
 
@@ -105,9 +131,23 @@ function sketch() {
         function burn() {} // darkens a drawn in grid box
 
         function reset() {
-          function clearGrid() {}
-          function resetEvents() {}
-        } // resets all grid boxes
+            const resetButton = document.getElementById("reset")
+
+          function clearGrid() {
+            console.log("clear Grid")
+            gridCol.forEach(col => {
+                col.childNodes.forEach(item => {
+                    item.setAttribute("style", "background-color:white")
+                })
+            })
+          };
+
+          function resetEvents() {
+            resetButton.addEventListener("click", () =>{
+                clearGrid()
+            })
+          }; resetEvents()
+        }; reset() // resets all grid boxes
       };
       controls();
     };
