@@ -31,31 +31,7 @@ function sketchv3() {
       grid.setAttribute("class", "grid");
       grid.setAttribute("id", "grid");
       grid.setAttribute("value", "off");
-
-      //function createGrid(n = 16) {
-      //  for (let i = 0; i < n; i++) {
-      //    let gridDiv = grid.appendChild(document.createElement("div"));
-      //    gridDiv.setAttribute("class", "grid-container-item col");
-      //    for (let j = 0; j < n; j++) {
-      //      let gridContainerItemColumn = gridDiv.appendChild(
-      //        document.createElement("div")
-      //      );
-      //      gridContainerItemColumn.setAttribute(
-      //        "class",
-      //        "grid-container-item row"
-      //      );
-//
-      //
-      //      //console.log("this function creates the Divs")
-      //    }
-      //  }
-      //}
-//
-      ////creaete grid call
-      //createGrid();
     }
-
-    // grid call
     grid();
 
     function controls() {
@@ -123,14 +99,14 @@ function sketchv3() {
       colors();
 
       const gridSize = () => {
-        // creates gridZSize control div -- child of control div sub div
-        // create input element
-        // set input attributes
         const grid = controlMenuDiv.appendChild(document.createElement("div"));
-        const gridLabel = grid.appendChild(document.createElement("h3"));
-        gridLabel.textContent = "Grid Size";
         grid.setAttribute("id", "grid-control");
         grid.setAttribute("class", "grid-control");
+
+        const gridLabel = grid.appendChild(document.createElement("h3"));
+        gridLabel.setAttribute('id', 'grid-label')
+        gridLabel.setAttribute('class', 'grid-label')
+        gridLabel.textContent = "Grid Size";
 
         const size = grid.appendChild(document.createElement("input"));
         size.setAttribute("id", "grid-size-input");
@@ -139,6 +115,73 @@ function sketchv3() {
       };
       // grid size call
       gridSize();
+
+      const eraser = () => {
+        const erase =  controlMenuDiv.appendChild(document.createElement("div"))
+        erase.setAttribute('id', 'erase-control')
+        erase.setAttribute("class", "erase-control");
+
+        const eraseLabel = erase.appendChild(document.createElement("h3"))
+        eraseLabel.textContent = "Eraser";
+        eraseLabel.setAttribute("id","erase-label")
+        eraseLabel.setAttribute("class","erase-label");
+
+        const eraseInput = erase.appendChild(document.createElement("checkbox"));
+        eraseInput.setAttribute("id", "erase-input");
+        eraseInput.setAttribute("class", "erase-input");
+
+         
+      }; eraser()
+
+      const dodger = () => {
+          const dodge = controlMenuDiv.appendChild(document.createElement("div"));
+          dodge.setAttribute('id', 'dodge-control');
+          dodge.setAttribute('class', 'dodge-control');
+
+          const dodgeLabel = dodge.appendChild(document.createElement("h3"));
+          dodgeLabel.textContent = "lighten";
+          dodgeLabel.setAttribute("id", "dodge-label");
+          dodgeLabel.setAttribute("class", "dodge-label");
+
+           const dodgeInput = dodge.appendChild(
+             document.createElement("checkbox")
+           );
+           eraseInput.setAttribute("id", "dodge-input");
+           eraseInput.setAttribute("class", "dodge-input");
+      }; dodger()
+
+        const rainbow = () => {
+          const rainb = controlMenuDiv.appendChild(document.createElement("div"));
+          rainb.setAttribute('id', 'rain-control')
+          rainb.setAttribute('class', "rain-control")
+
+          const rainbowLabel = rainb.appendChild(document.createElement("h3"));
+           rainbowLabel.textContent = "Rainbow"
+          rainbowLabel.setAttribute("id", "rain-label");
+          rainbowlabel.setAttribute("class", "rain-label");
+
+        const rainInput = rainb.appendChild(document.createElement("checkbox"));
+        rainInput.setAttribute("id", "rain-input");
+        rainInput.setAttribute("class", "rain-input");
+
+      }; rainbow()
+
+      const burner = () => {
+          const burn = controlMenuDiv.appendChild(document.createElement("div"));
+          burn.setAttribute('id', 'burn-control')
+          burn.setAttribute('class', "burn-control")
+
+          const burnLabel = burn.appendChild(document.createElement("h3"));
+           burnLabel.textContent = "Darken"
+          burnLabel.setAttribute("id", "burn-label");
+          burnlabel.setAttribute("class", "burn-label");
+
+          const burnInput = burn.appendChild(
+            document.createElement("checkbox")
+          );
+          burnInput.setAttribute("id", "burn-input");
+          burnInput.setAttribute("class", "burn-input");
+      }; burner()
 
       const reset = () => {
         // creates reset control div -- child of control div sub div

@@ -1,5 +1,7 @@
 function sketch() {
+
   function interface() {
+
     function grid() {
       const gridSelector = document.getElementById("grid");
       gridSelector.setAttribute("value", "off");
@@ -16,8 +18,6 @@ function sketch() {
         }
       };
       createGrid();
-
-
 
       const gridStart = (evt) => {
         const colorInput = document.querySelector(".color-input");
@@ -51,6 +51,7 @@ function sketch() {
       };
 
       function controls() {
+
         function colors() {
 
           function draw() {
@@ -62,7 +63,6 @@ function sketch() {
             console.log("Stop Drawing")
             removeGridEventListeners();
           }
-         
 
           function toggle() {
             const start = gridSelector.getAttribute("value");
@@ -109,7 +109,6 @@ function sketch() {
                 deleteGrid();
                 createGrid(input);
                 removeGridEventListeners()
-                toggle();
               });
             };
             gridInputs(); // return grid size input
@@ -118,7 +117,9 @@ function sketch() {
         }
         size(); // controls the size of the grid
 
-        function eraser() {} // removes a drawn grid box
+        function eraser() {
+
+        } // removes a drawn grid box
 
         function rainbow() {} // paints with the colors of the rainbow
 
