@@ -142,7 +142,7 @@ function sketchv3() {
           const burnLabel = burn.appendChild(document.createElement("h3"));
            burnLabel.textContent = "Darken"
           burnLabel.setAttribute("id", "burn-label");
-          burnlabel.setAttribute("class", "burn-label");
+          burnLabel.setAttribute("class", "burn-label");
 
           const burnInput = burn.appendChild(
             document.createElement("checkbox")
@@ -150,6 +150,22 @@ function sketchv3() {
           burnInput.setAttribute("id", "burn-input");
           burnInput.setAttribute("class", "burn-input");
       }; burner()
+
+       const rainbow = () => {
+         const rainbower = controlMenuDiv.appendChild(document.createElement("div"));
+         rainbower.setAttribute("id", "burn-control");
+         rainbower.setAttribute("class", "burn-control");
+
+         const rainLabel = rainbower.appendChild(document.createElement("h3"));
+         rainLabel.textContent = "Rainbow";
+         rainLabel.setAttribute("id", "rain-label");
+         rainLabel.setAttribute("class", "rain-label");
+
+         const rainInput = rainbower.appendChild(document.createElement("checkbox"));
+         rainInput.setAttribute("id", "rain-input");
+         rainInput.setAttribute("class", "rain-input");
+       }; rainbow();
+
 
       const reset = () => {
         const resetDiv = controlMenuDiv.appendChild(

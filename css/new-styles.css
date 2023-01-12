@@ -130,11 +130,15 @@ h2 {
     background-color: black;
 }
 
+.color-input {
+  width: 12vw;
+  height: 6vh;
+}
+
 .color-choices {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  overflow-x: scroll;
   height: 12vh;
   width: 12vw;
   justify-content: center;
@@ -177,7 +181,8 @@ h2 {
 
 .erase-input,
 .burn-input,
-.dodge-input {
+.dodge-input,
+.rain-input {
   width: 3vw;
   height: 3vh;;
   background-color: white;
