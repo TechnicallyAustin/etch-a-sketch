@@ -99,7 +99,6 @@ function sketch() {
 
           const gridInputs = () => {
             const input = document.getElementById("grid-size-input");
-
             gridSizeInput.addEventListener("mouseup", () => {
               console.log(input.value);
               deleteGrid();
@@ -115,23 +114,72 @@ function sketch() {
           const eraseBox = document.getElementById("erase-input");
           const value = eraseBox.getAttribute("value");
           console.log(value);
-          
-          eraseBox.addEventListener("click", () => {});
-          if (eraseBox.checked)
+
+          const eraseActions = () => {
+             for (let i = 0; i < gridCol.length; i++) {
+               let col = gridCol[i];
+               let rows = col.children;
+               for (let j = 0; j < rows.length; j++) {
+                 let row = rows[j];
+                 row.setAttribute("style", "background-color:white")
+               }
+             }
+          };
+
+          const createEraseEvents = () => {
             for (let i = 0; i < gridCol.length; i++) {
               let col = gridCol[i];
               let rows = col.children;
               for (let j = 0; j < rows.length; j++) {
                 let row = rows[j];
-                row.addEventListener();
-              }
-            }
-        } // removes a drawn grid box
+                row.addEventListener("click", eraseActions);
+              };
+            };
+          };
+
+          const removeEraseEvents = () => {
+             for (let i = 0; i < gridCol.length; i++) {
+               let col = gridCol[i];
+               let rows = col.children;
+               for (let j = 0; j < rows.length; j++) {
+                 let row = rows[j];
+                 row.removeEventListener("click", eraseActions);
+               };
+             };
+          };
+
+          const eraserToggle = () => {
+                    const start = eraseBox.getAttribute("value");
+                    console.log(start);
+                    if (start === "off") {
+                      eraseBox.setAttribute("value", "on");
+                      createEraseEvents()
+                    } else {
+                      eraseActions.setAttribute("value", "off");
+                      removeEraseEvents()
+                    }
+                  };
+          
+
+                function eraserToggleEvent() {
+                  for (let i = 0; i < gridCol.length; i++) {
+                    let col = gridCol[i];
+                    let rows = col.children;
+                    for (let j = 0; j < rows.length; j++) {
+                      let row = rows[j];
+                      row.addEventListener("click", () => {
+                        console.log("toggle clicked");
+                        eraserToggle();
+                      });
+                    };
+                  };
+                };
+
 
         function dodge() {
           const dodgeBox = document.getElementById("dodge-input");
           const value = dodgeBox.getAttribute("value");
-          console.log(value)
+          console.log(value);
           for (let i = 0; i < gridCol.length; i++) {
             let col = gridCol[i];
             let rows = col.children;
@@ -205,15 +253,15 @@ function sketch() {
             resetButton.addEventListener("click", () => {
               clearGrid();
             });
-          }
-          resetEvents();
-        }
-        reset();
-      }
-      controls();
-    }
-    grid();
-  }
-  interface();
-}
-sketch();
+          };
+          resetEvents()
+        };
+        reset()
+      };
+      controls()
+    };
+    grid()
+  };
+  interface()
+};
+sketch()
