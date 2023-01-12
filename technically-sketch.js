@@ -14,14 +14,14 @@ function sketch() {
             rowItem.setAttribute("class", "grid-container-item row");
           }
         }
-      }
+      };
       createGrid();
 
 
 
       const gridStart = (evt) => {
         const colorInput = document.querySelector(".color-input");
-        let color = colorInput.value; // gets the hex code for the color
+        let color = colorInput.value; 
         evt.target.setAttribute("class", `grid-container-item row ${color}`);
         evt.target.setAttribute("style", `background-color:${color}`);
         console.log(color);
@@ -29,12 +29,11 @@ function sketch() {
 
       const gridEventListeners = () => {
         for (let i = 0; i < gridCol.length; i++) {
-          let col = gridCol[i]; // parent Column
+          let col = gridCol[i]; 
           let rows = col.children
 
-          for (let j = 0; j < rows.childElementCount; j++) {
+          for (let j = 0; j < rows.length; j++) {
             let row = rows[j]
-            console.log(row)
             row.addEventListener("mouseenter", gridStart);
           }
         }
@@ -53,26 +52,29 @@ function sketch() {
 
       function controls() {
         function colors() {
+
           function draw() {
+            console.log("drawing")
             gridEventListeners();
-          } // continous draw logic
+          } 
 
           function stopDraw() {
+            console.log("Stop Drawing")
             removeGridEventListeners();
           }
-          // removes/change event listeners so that boxes will not be drawn in mouseup
+         
 
           function toggle() {
             const start = gridSelector.getAttribute("value");
             console.log(start);
-            if (start === "off") {
-              gridSelector.setAttribute("value", "on");
+            if (start === 'off') {
+              gridSelector.setAttribute("value", 'on');
               draw();
             } else {
-              gridSelector.setAttribute("value", "off");
+              gridSelector.setAttribute("value", 'off');
               stopDraw();
             }
-          } // toggles between draw() and stopDraw() given a mouse click
+          } 
 
           function toggleEvent() {
             for (let i = 0; i < gridCol.length; i++) {
@@ -86,10 +88,10 @@ function sketch() {
                 });
               }
             }
-          }
+          };
           toggleEvent();
         }
-        colors(); // controls color options on the grid
+        colors(); 
 
         function size() {
           const gridSizeInput = document.getElementById("grid-size-input");
@@ -97,7 +99,7 @@ function sketch() {
             while (gridSelector.firstElementChild) {
               gridSelector.lastElementChild.remove();
             }
-          } // rmeoves the grid
+          } 
 
           function changeSize() {
             const gridInputs = () => {
@@ -106,6 +108,7 @@ function sketch() {
                 console.log(input);
                 deleteGrid();
                 createGrid(input);
+                removeGridEventListeners()
                 toggle();
               });
             };
@@ -142,7 +145,7 @@ function sketch() {
           }
           resetEvents();
         }
-        reset(); // resets all grid boxes
+        reset(); 
       }
       controls();
     }
