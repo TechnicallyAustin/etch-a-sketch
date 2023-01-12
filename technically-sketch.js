@@ -89,57 +89,117 @@ function sketch() {
        toggleEvent();
 
       function controls() {
-
         function size() {
           const gridSizeInput = document.getElementById("grid-size-input");
           function deleteGrid() {
             while (gridSelector.firstElementChild) {
               gridSelector.lastElementChild.remove();
             }
-          } 
+          }
 
+          const gridInputs = () => {
+            const input = document.getElementById("grid-size-input");
 
-            const gridInputs = () => {
-              gridSizeInput.addEventListener("click", () => {
-                let input = prompt("eneter a grid size");
-                console.log(input);
-                deleteGrid();
-                createGrid(input);
-                toggleEvent()
-              });
-            }; gridInputs();
-        
-        }; size()
+            gridSizeInput.addEventListener("mouseup", () => {
+              console.log(input.value);
+              deleteGrid();
+              createGrid(input.value);
+              toggleEvent();
+            });
+          };
+          gridInputs();
+        }
+        size();
 
         function eraser() {
-
+          const eraseBox = document.getElementById("erase-input");
+          const value = eraseBox.getAttribute("value");
+          console.log(value);
+          
+          eraseBox.addEventListener("click", () => {});
+          if (eraseBox.checked)
+            for (let i = 0; i < gridCol.length; i++) {
+              let col = gridCol[i];
+              let rows = col.children;
+              for (let j = 0; j < rows.length; j++) {
+                let row = rows[j];
+                row.addEventListener();
+              }
+            }
         } // removes a drawn grid box
 
-        function rainbow() {
-
-        } // paints with the colors of the rainbow
-
         function dodge() {
-
+          const dodgeBox = document.getElementById("dodge-input");
+          const value = dodgeBox.getAttribute("value");
+          console.log(value)
+          for (let i = 0; i < gridCol.length; i++) {
+            let col = gridCol[i];
+            let rows = col.children;
+            for (let j = 0; j < rows.length; j++) {
+              let row = rows[j];
+              // code block
+            }
+          }
         } // ligthens the a drawn in grid box
 
         function burn() {
+          const burnBox = document.getElementById("burn-box");
+          const value = burnBox.getAttribute("value");
+          console.log(value);
 
+          for (let i = 0; i < gridCol.length; i++) {
+            let col = gridCol[i];
+            let rows = col.children;
+            for (let j = 0; j < rows.length; j++) {
+              let row = rows[j];
+              // code block
+            }
+          }
         } // darkens a drawn in grid box
+
+        function rainbow() {
+          const rainBox = document.getElementById("rain-input");
+          const value = rainBox.getAttribute("value");
+          console.log(value);
+
+          for (let i = 0; i < gridCol.length; i++) {
+            let col = gridCol[i];
+            let rows = col.children;
+            for (let j = 0; j < rows.length; j++) {
+              let row = rows[j];
+              // code block
+            }
+          }
+        } // paints with the colors of the rainbow
+
+        function sample() {
+          const sampler = document.getElementById("sample-box");
+          const value = sampler.getAttribute("value");
+          console.log(value);
+
+          for (let i = 0; i < gridCol.length; i++) {
+            let col = gridCol[i];
+            let rows = col.children;
+            for (let j = 0; j < rows.length; j++) {
+              let row = rows[j];
+              // code block
+            }
+          }
+        } // copies a previous drawn color on the grid
 
         function reset() {
           const resetButton = document.getElementById("reset");
 
           function clearGrid() {
-             for (let i = 0; i < gridCol.length; i++) {
+            for (let i = 0; i < gridCol.length; i++) {
               let col = gridCol[i];
               let rows = col.children;
               for (let j = 0; j < rows.length; j++) {
                 let row = rows[j];
-                row.setAttribute("style", "background-color:white")
-                };
+                row.setAttribute("style", "background-color:white");
               }
             }
+          }
 
           function resetEvents() {
             resetButton.addEventListener("click", () => {
@@ -148,7 +208,7 @@ function sketch() {
           }
           resetEvents();
         }
-        reset(); 
+        reset();
       }
       controls();
     }

@@ -166,7 +166,8 @@ h2 {
 .burn-control,
 .dodge-control,
 .erase-control,
-.rain-control {
+.rain-control,
+.sample-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -182,7 +183,8 @@ h2 {
 .erase-input,
 .burn-input,
 .dodge-input,
-.rain-input {
+.rain-input,
+.sample-input {
   width: 3vw;
   height: 3vh;;
   background-color: white;

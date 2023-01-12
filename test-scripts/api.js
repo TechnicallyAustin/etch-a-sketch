@@ -75,10 +75,24 @@ function sketchv3() {
         gridLabel.textContent = "Grid Size";
 
         // add input type range for slider
-        const size = grid.appendChild(document.createElement("input"));
-        size.setAttribute("id", "grid-size-input");
-        size.setAttribute("class", "grid-size-input");
-        size.setAttribute("placeholder", "Enter a size 17-100");
+        const gridSlider = controlMenuDiv.appendChild(document.createElement("div"));
+        gridSlider.setAttribute("class", "slider");
+        gridSlider.setAttribute("id", "slider");
+
+        const gridInput = gridSlider.appendChild(document.createElement("input"));
+        gridInput.setAttribute("type", "range");
+        gridInput.setAttribute("id", "grid-size-input");
+        gridInput.setAttribute("min", "16");
+        gridInput.setAttribute("max", "100");
+        gridInput.setAttribute("value", "16")
+        gridInput.setAttribute("oninput", "rangeValue.textContent = this.value")
+
+
+        const inputLabel = gridSlider.appendChild(document.createElement("p"));
+        inputLabel.setAttribute("id", "rangeValue")
+        inputLabel.setAttribute("class", "grid-value")
+        inputLabel.textContent = "16"
+      
       }; gridSize();
 
       const eraser = () => {
@@ -94,6 +108,7 @@ function sketchv3() {
         const eraseInput = erase.appendChild(document.createElement("checkbox"));
         eraseInput.setAttribute("id", "erase-input");
         eraseInput.setAttribute("class", "erase-input");
+        eraseInput.setAttribute("value", "off")
       }; eraser()
 
       const dodger = () => {
@@ -109,6 +124,7 @@ function sketchv3() {
            const dodgeInput = dodge.appendChild(document.createElement("checkbox"));
            dodgeInput.setAttribute("id", "dodge-input");
            dodgeInput.setAttribute("class", "dodge-input");
+           dodgeInput.setAttribute("value", "off")
       }; dodger()
 
       const burner = () => {
@@ -124,12 +140,13 @@ function sketchv3() {
           const burnInput = burn.appendChild(document.createElement("checkbox"));
           burnInput.setAttribute("id", "burn-input");
           burnInput.setAttribute("class", "burn-input");
+          burnInput.setAttribute("value", "off");
       }; burner()
 
        const rainbow = () => {
          const rainbower = controlMenuDiv.appendChild(document.createElement("div"));
-         rainbower.setAttribute("id", "burn-control");
-         rainbower.setAttribute("class", "burn-control");
+         rainbower.setAttribute("id", "rain-control");
+         rainbower.setAttribute("class", "rain-control");
 
          const rainLabel = rainbower.appendChild(document.createElement("h3"));
          rainLabel.textContent = "Rainbow";
@@ -139,21 +156,23 @@ function sketchv3() {
          const rainInput = rainbower.appendChild(document.createElement("checkbox"));
          rainInput.setAttribute("id", "rain-input");
          rainInput.setAttribute("class", "rain-input");
+         rainInput.setAttribute("value", "off")
        }; rainbow();
 
         const colorSample = () => {
         const sampler = controlMenuDiv.appendChild(document.createElement("div"))
-          sampler.setAttribute("id", "burn-control");
-          sampler.setAttribute("class", "burn-control")
+          sampler.setAttribute("id", "sample-control");
+          sampler.setAttribute("class", "sample-control")
 
           const smaplerLabel = sampler.appendChild(document.createElement("h3"));
           smaplerLabel.textContent = "Color Sample";
-          smaplerLabel.setAttribute("id", "rain-label");
-          smaplerLabel.setAttribute("class", "rain-label")
+          smaplerLabel.setAttribute("id", "sample-label");
+          smaplerLabel.setAttribute("class", "sample-label")
 
           const sampleInput = sampler.appendChild(document.createElement("checkbox"));
-          sampleInput.setAttribute("id", "rain-input");
-          sampleInput.setAttribute("class", "rain-input");
+          sampleInput.setAttribute("id", "sample-input");
+          sampleInput.setAttribute("class", "sample-input");
+          sampleInput.setAttribute("value", "off");
         }; colorSample();
 
       const reset = () => {
