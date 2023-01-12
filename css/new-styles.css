@@ -175,6 +175,14 @@ h2 {
   height: 12vh;
 }
 
+.erase-input,
+.burn-input,
+.dodge-input {
+  width: 3vw;
+  height: 3vh;;
+  background-color: white;
+  color: white;
+}
 .reset {
   width: 14vw;
   height: 4vh;

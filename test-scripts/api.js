@@ -31,12 +31,10 @@ function sketchv3() {
       grid.setAttribute("class", "grid");
       grid.setAttribute("id", "grid");
       grid.setAttribute("value", "off");
-    }
-    grid();
+    }; grid();
 
     function controls() {
-      // creates  control div
-      // creates control div sub div
+
       const controlContainer = interface.appendChild(
         document.createElement("div")
       );
@@ -61,23 +59,17 @@ function sketchv3() {
       controlMenuDiv.setAttribute("id", "control-menu-div");
 
       const colors = () => {
-        //creates color control div - child of control div sub div
-        // set's div attributes
         const colorsDiv = controlMenuDiv.appendChild(
           document.createElement("div")
         );
         colorsDiv.setAttribute("class", "color-control");
         colorsDiv.setAttribute("id", "color-control");
 
-        // creates color div h3
-        // sets color div attributes
-        // sets color div h3 text content
         const colorLabel = colorsDiv.appendChild(document.createElement("h3"));
         colorLabel.textContent = "Colors";
         colorLabel.setAttribute("class", "color-label");
         colorLabel.setAttribute("id", "color-label");
 
-        // creates colorChoices div
         const colorChoices = colorsDiv.appendChild(
           document.createElement("div")
         );
@@ -92,11 +84,7 @@ function sketchv3() {
         const colorPickerLabel = colorChoices.appendChild(document.createElement("label"))
         colorPickerLabel.setAttribute("class", "color-input")
         colorPickerLabel.setAttribute("name", "grid-color")
-        
-      };
-
-      // color call
-      colors();
+      }; colors();
 
       const gridSize = () => {
         const grid = controlMenuDiv.appendChild(document.createElement("div"));
@@ -112,9 +100,7 @@ function sketchv3() {
         size.setAttribute("id", "grid-size-input");
         size.setAttribute("class", "grid-size-input");
         size.setAttribute("placeholder", "Enter a size 17-100");
-      };
-      // grid size call
-      gridSize();
+      }; gridSize();
 
       const eraser = () => {
         const erase =  controlMenuDiv.appendChild(document.createElement("div"))
@@ -129,8 +115,6 @@ function sketchv3() {
         const eraseInput = erase.appendChild(document.createElement("checkbox"));
         eraseInput.setAttribute("id", "erase-input");
         eraseInput.setAttribute("class", "erase-input");
-
-         
       }; eraser()
 
       const dodger = () => {
@@ -146,25 +130,9 @@ function sketchv3() {
            const dodgeInput = dodge.appendChild(
              document.createElement("checkbox")
            );
-           eraseInput.setAttribute("id", "dodge-input");
-           eraseInput.setAttribute("class", "dodge-input");
+           dodgeInput.setAttribute("id", "dodge-input");
+           dodgeInput.setAttribute("class", "dodge-input");
       }; dodger()
-
-        const rainbow = () => {
-          const rainb = controlMenuDiv.appendChild(document.createElement("div"));
-          rainb.setAttribute('id', 'rain-control')
-          rainb.setAttribute('class', "rain-control")
-
-          const rainbowLabel = rainb.appendChild(document.createElement("h3"));
-           rainbowLabel.textContent = "Rainbow"
-          rainbowLabel.setAttribute("id", "rain-label");
-          rainbowlabel.setAttribute("class", "rain-label");
-
-        const rainInput = rainb.appendChild(document.createElement("checkbox"));
-        rainInput.setAttribute("id", "rain-input");
-        rainInput.setAttribute("class", "rain-input");
-
-      }; rainbow()
 
       const burner = () => {
           const burn = controlMenuDiv.appendChild(document.createElement("div"));
@@ -184,9 +152,6 @@ function sketchv3() {
       }; burner()
 
       const reset = () => {
-        // creates reset control div -- child of control div sub div
-        // create reset button
-        // set reset button attributes
         const resetDiv = controlMenuDiv.appendChild(
           document.createElement("div")
         );
@@ -200,16 +165,7 @@ function sketchv3() {
         button.setAttribute("class", "reset");
         button.setAttribute("value", "reset");
         button.textContent = "Reset Grid";
-      };
-
-      // reset call
-      reset();
-    }
-    // control call
-    controls();
-  }
-  // interface call
-  interface();
-}
-// sketch call
-sketchv3();
+      }; reset();
+    }; controls();
+  }; interface();
+}; sketchv3();
