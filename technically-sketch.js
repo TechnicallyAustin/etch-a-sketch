@@ -50,48 +50,45 @@ function sketch() {
         }
       };
 
+       function draw() {
+         console.log("drawing");
+         gridEventListeners();
+       }
+
+       function stopDraw() {
+         console.log("Stop Drawing");
+         removeGridEventListeners();
+       }
+
+
+         function toggle() {
+           const start = gridSelector.getAttribute("value");
+           console.log(start);
+           if (start === "off") {
+             gridSelector.setAttribute("value", "on");
+             draw();
+           } else {
+             gridSelector.setAttribute("value", "off");
+             stopDraw();
+           }
+         } 
+
+       function toggleEvent() {
+         for (let i = 0; i < gridCol.length; i++) {
+           let col = gridCol[i];
+           let rows = col.children;
+           for (let j = 0; j < rows.length; j++) {
+             let row = rows[j];
+             row.addEventListener("click", () => {
+               console.log("toggle clicked");
+               toggle();
+             });
+           }
+         }
+       }
+       toggleEvent();
+
       function controls() {
-
-        function colors() {
-
-          function draw() {
-            console.log("drawing")
-            gridEventListeners();
-          } 
-
-          function stopDraw() {
-            console.log("Stop Drawing")
-            removeGridEventListeners();
-          }
-
-          function toggle() {
-            const start = gridSelector.getAttribute("value");
-            console.log(start);
-            if (start === 'off') {
-              gridSelector.setAttribute("value", 'on');
-              draw();
-            } else {
-              gridSelector.setAttribute("value", 'off');
-              stopDraw();
-            }
-          } 
-
-          function toggleEvent() {
-            for (let i = 0; i < gridCol.length; i++) {
-              let col = gridCol[i];
-              let rows = col.children;
-              for (let j = 0; j < rows.length; j++) {
-                let row = rows[j];
-                row.addEventListener("click", () => {
-                  console.log("toggle clicked");
-                  toggle();
-                });
-              }
-            }
-          };
-          toggleEvent();
-        }
-        colors(); 
 
         function size() {
           const gridSizeInput = document.getElementById("grid-size-input");
@@ -108,7 +105,9 @@ function sketch() {
                 console.log(input);
                 deleteGrid();
                 createGrid(input);
-                removeGridEventListeners()
+                toggleEvent()
+
+
               });
             };
             gridInputs(); // return grid size input
@@ -121,11 +120,17 @@ function sketch() {
 
         } // removes a drawn grid box
 
-        function rainbow() {} // paints with the colors of the rainbow
+        function rainbow() {
 
-        function dodge() {} // ligthens the a drawn in grid box
+        } // paints with the colors of the rainbow
 
-        function burn() {} // darkens a drawn in grid box
+        function dodge() {
+
+        } // ligthens the a drawn in grid box
+
+        function burn() {
+            
+        } // darkens a drawn in grid box
 
         function reset() {
           const resetButton = document.getElementById("reset");
@@ -134,11 +139,9 @@ function sketch() {
              for (let i = 0; i < gridCol.length; i++) {
               let col = gridCol[i];
               let rows = col.children;
-
               for (let j = 0; j < rows.length; j++) {
                 let row = rows[j];
                 row.setAttribute("style", "background-color:white")
-
                 };
               }
             }

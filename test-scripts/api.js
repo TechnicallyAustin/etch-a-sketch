@@ -96,6 +96,7 @@ function sketchv3() {
         gridLabel.setAttribute('class', 'grid-label')
         gridLabel.textContent = "Grid Size";
 
+        // add input type range for slider
         const size = grid.appendChild(document.createElement("input"));
         size.setAttribute("id", "grid-size-input");
         size.setAttribute("class", "grid-size-input");
@@ -165,6 +166,29 @@ function sketchv3() {
          rainInput.setAttribute("id", "rain-input");
          rainInput.setAttribute("class", "rain-input");
        }; rainbow();
+
+           const colorSample = () => {
+             const sampler = controlMenuDiv.appendChild(
+               document.createElement("div")
+             );
+             sampler.setAttribute("id", "burn-control");
+             sampler.setAttribute("class", "burn-control");
+
+             const smaplerLabel = sampler.appendChild(
+               document.createElement("h3")
+             );
+             smaplerLabel.textContent = "Color Sample";
+             smaplerLabel.setAttribute("id", "rain-label");
+             smaplerLabel.setAttribute("class", "rain-label");
+
+             const sampleInput = sampler.appendChild(
+               document.createElement("checkbox")
+             );
+             sampleInput.setAttribute("id", "rain-input");
+             sampleInput.setAttribute("class", "rain-input");
+           }; colorSample();
+
+
 
 
       const reset = () => {
