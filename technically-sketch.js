@@ -115,7 +115,7 @@ function sketch() {
           const value = eraseBox.getAttribute("value");
           console.log(value);
 
-          const eraseActions = () => {
+          const eraseAction = () => {
              for (let i = 0; i < gridCol.length; i++) {
                let col = gridCol[i];
                let rows = col.children;
@@ -132,7 +132,7 @@ function sketch() {
               let rows = col.children;
               for (let j = 0; j < rows.length; j++) {
                 let row = rows[j];
-                row.addEventListener("click", eraseActions);
+                row.addEventListener("click", eraseAction);
               };
             };
           };
@@ -143,37 +143,31 @@ function sketch() {
                let rows = col.children;
                for (let j = 0; j < rows.length; j++) {
                  let row = rows[j];
-                 row.removeEventListener("click", eraseActions);
+                 row.removeEventListener("click", eraseAction);
                };
              };
           };
 
           const eraserToggle = () => {
                     const start = eraseBox.getAttribute("value");
-                    console.log(start);
+                    console.log("eraser-toggle", start);
                     if (start === "off") {
                       eraseBox.setAttribute("value", "on");
                       createEraseEvents()
                     } else {
-                      eraseActions.setAttribute("value", "off");
+                      eraseBox.setAttribute("value", "off");
                       removeEraseEvents()
                     }
                   };
           
 
                 function eraserToggleEvent() {
-                  for (let i = 0; i < gridCol.length; i++) {
-                    let col = gridCol[i];
-                    let rows = col.children;
-                    for (let j = 0; j < rows.length; j++) {
-                      let row = rows[j];
-                      row.addEventListener("click", () => {
-                        console.log("toggle clicked");
+                      eraseBox.addEventListener("click", () => {
+                        console.log("eraser toggle clicked");
                         eraserToggle();
                       });
-                    };
-                  };
-                };
+                }; eraserToggleEvent()
+              }; eraser()
 
 
         function dodge() {
