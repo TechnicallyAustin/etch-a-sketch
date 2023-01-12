@@ -12,19 +12,17 @@ function sketchv3() {
     interface.setAttribute("class", "interface");
 
     function grid() {
-      const gridContainer = interface.appendChild(
-        document.createElement("div")
-      );
+      const gridContainer = interface.appendChild(document.createElement("div"));
       gridContainer.setAttribute("class", "grid-container");
 
       const grid = gridContainer.appendChild(document.createElement("div"));
       grid.setAttribute("class", "grid");
       grid.setAttribute("id", "grid");
       grid.setAttribute("value", "off");
+
     }; grid();
 
     function controls() {
-
       const controlContainer = interface.appendChild(document.createElement("div"));
       controlContainer.setAttribute("class", "control-container");
 
@@ -62,6 +60,7 @@ function sketchv3() {
         const colorPickerLabel = colorChoices.appendChild(document.createElement("label"))
         colorPickerLabel.setAttribute("class", "color-input")
         colorPickerLabel.setAttribute("name", "grid-color")
+
       }; colors();
 
       const gridSize = () => {
@@ -92,7 +91,7 @@ function sketchv3() {
         inputLabel.setAttribute("id", "rangeValue")
         inputLabel.setAttribute("class", "grid-value")
         inputLabel.textContent = "16"
-      
+
       }; gridSize();
 
       const eraser = () => {
@@ -111,38 +110,6 @@ function sketchv3() {
         eraseInput.setAttribute("value", "off")
       }; eraser()
 
-      const dodger = () => {
-          const dodge = controlMenuDiv.appendChild(document.createElement("div"));
-          dodge.setAttribute('id', 'dodge-control');
-          dodge.setAttribute('class', 'dodge-control');
-
-          const dodgeLabel = dodge.appendChild(document.createElement("h3"));
-          dodgeLabel.textContent = "lighten";
-          dodgeLabel.setAttribute("id", "dodge-label");
-          dodgeLabel.setAttribute("class", "dodge-label");
-
-           const dodgeInput = dodge.appendChild(document.createElement("checkbox"));
-           dodgeInput.setAttribute("id", "dodge-input");
-           dodgeInput.setAttribute("class", "dodge-input");
-           dodgeInput.setAttribute("value", "off")
-      }; dodger()
-
-      const burner = () => {
-          const burn = controlMenuDiv.appendChild(document.createElement("div"));
-          burn.setAttribute('id', 'burn-control')
-          burn.setAttribute('class', "burn-control")
-
-          const burnLabel = burn.appendChild(document.createElement("h3"));
-           burnLabel.textContent = "Darken"
-          burnLabel.setAttribute("id", "burn-label");
-          burnLabel.setAttribute("class", "burn-label");
-
-          const burnInput = burn.appendChild(document.createElement("checkbox"));
-          burnInput.setAttribute("id", "burn-input");
-          burnInput.setAttribute("class", "burn-input");
-          burnInput.setAttribute("value", "off");
-      }; burner()
-
        const rainbow = () => {
          const rainbower = controlMenuDiv.appendChild(document.createElement("div"));
          rainbower.setAttribute("id", "rain-control");
@@ -157,23 +124,8 @@ function sketchv3() {
          rainInput.setAttribute("id", "rain-input");
          rainInput.setAttribute("class", "rain-input");
          rainInput.setAttribute("value", "off")
+
        }; rainbow();
-
-        const colorSample = () => {
-        const sampler = controlMenuDiv.appendChild(document.createElement("div"))
-          sampler.setAttribute("id", "sample-control");
-          sampler.setAttribute("class", "sample-control")
-
-          const smaplerLabel = sampler.appendChild(document.createElement("h3"));
-          smaplerLabel.textContent = "Color Sample";
-          smaplerLabel.setAttribute("id", "sample-label");
-          smaplerLabel.setAttribute("class", "sample-label")
-
-          const sampleInput = sampler.appendChild(document.createElement("checkbox"));
-          sampleInput.setAttribute("id", "sample-input");
-          sampleInput.setAttribute("class", "sample-input");
-          sampleInput.setAttribute("value", "off");
-        }; colorSample();
 
       const reset = () => {
         const resetDiv = controlMenuDiv.appendChild(document.createElement("div"));
@@ -188,6 +140,7 @@ function sketchv3() {
         button.setAttribute("class", "reset");
         button.setAttribute("value", "reset");
         button.textContent = "Reset Grid";
+        
       }; reset();
     }; controls();
   }; interface();
