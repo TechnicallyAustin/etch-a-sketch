@@ -5,7 +5,9 @@ function sketch() {
       const gridCol = gridSelector.childNodes;
 
       function controls() {
+
         function colors() {
+
           gridStart = (evt) => {
             const colorInput = document.querySelector(".color-input");
             let color = colorInput.value; // gets the hex code for the color
@@ -16,25 +18,20 @@ function sketch() {
             evt.target.setAttribute("style", `background-color:${color}`);
             console.log(color);
           };
+
           function draw() {
+
             const gridEventListeners = () => {
-              gridCol.forEach((col) => {
+              for (let i = 0; i < gridCol.length; i++) {
+                let col = gridCol[i];
                 let rows = col.childNodes;
                 rows.forEach((row) => {
-                  row.addEventListener("mouseenter", gridStart(evt)); // => {
-                  //const colorInput = document.querySelector(".color-input");
-                  //let color = colorInput.getAttribute("value"); // gets the hex code for the color
-                  //row.setAttribute(
-                  //  "class",
-                  //  `grid-container-item row ${color}`
-                  //);
-                  //row.setAttribute("style", `background-color:${color}`);
-                  //console.log(color);
-                  //});
+                  row.addEventListener("mouseenter", gridStart(evt));
                 });
-              });
+              }
             };
             gridEventListeners();
+
           } // continous draw logic
 
           function stopDraw() {
@@ -43,15 +40,7 @@ function sketch() {
                 let rows = col.childNodes;
                 rows.forEach((row) => {
                   row.removeEventListener("mouseenter", gridStart); // => {
-                  //const colorInput = document.querySelector(".color-input");
-                  //let color = colorInput.value; // gets the hex code for the color
-                  //row.setAttribute(
-                  //  "class",
-                  //  `grid-container-item row ${color}`
-                  //);
-                  //row.setAttribute("style", `background-color:${color}`);
-                  //console.log(color);
-                  //});
+
                 });
               });
             };
@@ -74,6 +63,7 @@ function sketch() {
               let rows = col.childNodes;
               rows.forEach((row) => {
                 row.addEventListener("click", () => {
+                  console.log("toggle clicked");
                   toggle();
                 });
               });
