@@ -131,13 +131,17 @@ function sketch() {
           const resetButton = document.getElementById("reset");
 
           function clearGrid() {
-            console.log("clear Grid");
-            gridCol.forEach((col) => {
-              col.childNodes.forEach((item) => {
-                item.setAttribute("style", "background-color:white");
-              });
-            });
-          }
+             for (let i = 0; i < gridCol.length; i++) {
+              let col = gridCol[i];
+              let rows = col.children;
+
+              for (let j = 0; j < rows.length; j++) {
+                let row = rows[j];
+                row.setAttribute("style", "background-color:white")
+
+                };
+              }
+            }
 
           function resetEvents() {
             resetButton.addEventListener("click", () => {
