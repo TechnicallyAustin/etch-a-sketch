@@ -98,7 +98,7 @@ function sketch() {
             }
           } 
 
-          function changeSize() {
+
             const gridInputs = () => {
               gridSizeInput.addEventListener("click", () => {
                 let input = prompt("eneter a grid size");
@@ -106,15 +106,10 @@ function sketch() {
                 deleteGrid();
                 createGrid(input);
                 toggleEvent()
-
-
               });
-            };
-            gridInputs(); // return grid size input
-          }
-          changeSize(); // adds event listeners to the grid
-        }
-        size(); // controls the size of the grid
+            }; gridInputs();
+        
+        }; size()
 
         function eraser() {
 
@@ -129,7 +124,7 @@ function sketch() {
         } // ligthens the a drawn in grid box
 
         function burn() {
-            
+
         } // darkens a drawn in grid box
 
         function reset() {

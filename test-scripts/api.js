@@ -1,27 +1,17 @@
 function sketchv3() {
   function title() {
-    // creates title element
-    // set title text content
-    // set title attributes
     const title = document.body.appendChild(document.createElement("h1"));
     title.setAttribute("class", "title");
     title.setAttribute("id", "title");
     title.textContent = "Technically Sketch";
-  }
-
-  // title call
-  title();
+  }; title();
 
   function interface() {
-    // creates interface div
-    // sets div attributes
     const interface = document.body.appendChild(document.createElement("div"));
     interface.setAttribute("id", "interface");
     interface.setAttribute("class", "interface");
 
     function grid() {
-      // creates grid div
-      // sets grid attributes
       const gridContainer = interface.appendChild(
         document.createElement("div")
       );
@@ -35,33 +25,23 @@ function sketchv3() {
 
     function controls() {
 
-      const controlContainer = interface.appendChild(
-        document.createElement("div")
-      );
+      const controlContainer = interface.appendChild(document.createElement("div"));
       controlContainer.setAttribute("class", "control-container");
 
-      const controlMenu = controlContainer.appendChild(
-        document.createElement("div")
-      );
+      const controlMenu = controlContainer.appendChild(document.createElement("div"));
       controlMenu.setAttribute("class", "controls");
       controlMenu.setAttribute("id", "controls");
 
-      const controlLabel = controlMenu.appendChild(
-        document.createElement("h2")
-      );
+      const controlLabel = controlMenu.appendChild(document.createElement("h2"));
       controlLabel.textContent = "Controls";
       controlLabel.setAttribute("id", "control-label");
 
-      const controlMenuDiv = controlMenu.appendChild(
-        document.createElement("div")
-      );
+      const controlMenuDiv = controlMenu.appendChild(document.createElement("div"));
       controlMenuDiv.setAttribute("class", "control-menu-div");
       controlMenuDiv.setAttribute("id", "control-menu-div");
 
       const colors = () => {
-        const colorsDiv = controlMenuDiv.appendChild(
-          document.createElement("div")
-        );
+        const colorsDiv = controlMenuDiv.appendChild(document.createElement("div"));
         colorsDiv.setAttribute("class", "color-control");
         colorsDiv.setAttribute("id", "color-control");
 
@@ -70,9 +50,7 @@ function sketchv3() {
         colorLabel.setAttribute("class", "color-label");
         colorLabel.setAttribute("id", "color-label");
 
-        const colorChoices = colorsDiv.appendChild(
-          document.createElement("div")
-        );
+        const colorChoices = colorsDiv.appendChild(document.createElement("div"));
         colorChoices.setAttribute("class", "color-choices");
         colorChoices.setAttribute("id", "color-choices");
 
@@ -128,9 +106,7 @@ function sketchv3() {
           dodgeLabel.setAttribute("id", "dodge-label");
           dodgeLabel.setAttribute("class", "dodge-label");
 
-           const dodgeInput = dodge.appendChild(
-             document.createElement("checkbox")
-           );
+           const dodgeInput = dodge.appendChild(document.createElement("checkbox"));
            dodgeInput.setAttribute("id", "dodge-input");
            dodgeInput.setAttribute("class", "dodge-input");
       }; dodger()
@@ -145,9 +121,7 @@ function sketchv3() {
           burnLabel.setAttribute("id", "burn-label");
           burnLabel.setAttribute("class", "burn-label");
 
-          const burnInput = burn.appendChild(
-            document.createElement("checkbox")
-          );
+          const burnInput = burn.appendChild(document.createElement("checkbox"));
           burnInput.setAttribute("id", "burn-input");
           burnInput.setAttribute("class", "burn-input");
       }; burner()
@@ -167,36 +141,26 @@ function sketchv3() {
          rainInput.setAttribute("class", "rain-input");
        }; rainbow();
 
-           const colorSample = () => {
-             const sampler = controlMenuDiv.appendChild(
-               document.createElement("div")
-             );
-             sampler.setAttribute("id", "burn-control");
-             sampler.setAttribute("class", "burn-control");
+        const colorSample = () => {
+        const sampler = controlMenuDiv.appendChild(document.createElement("div"))
+          sampler.setAttribute("id", "burn-control");
+          sampler.setAttribute("class", "burn-control")
 
-             const smaplerLabel = sampler.appendChild(
-               document.createElement("h3")
-             );
-             smaplerLabel.textContent = "Color Sample";
-             smaplerLabel.setAttribute("id", "rain-label");
-             smaplerLabel.setAttribute("class", "rain-label");
+          const smaplerLabel = sampler.appendChild(document.createElement("h3"));
+          smaplerLabel.textContent = "Color Sample";
+          smaplerLabel.setAttribute("id", "rain-label");
+          smaplerLabel.setAttribute("class", "rain-label")
 
-             const sampleInput = sampler.appendChild(
-               document.createElement("checkbox")
-             );
-             sampleInput.setAttribute("id", "rain-input");
-             sampleInput.setAttribute("class", "rain-input");
-           }; colorSample();
-
-
-
+          const sampleInput = sampler.appendChild(document.createElement("checkbox"));
+          sampleInput.setAttribute("id", "rain-input");
+          sampleInput.setAttribute("class", "rain-input");
+        }; colorSample();
 
       const reset = () => {
-        const resetDiv = controlMenuDiv.appendChild(
-          document.createElement("div")
-        );
+        const resetDiv = controlMenuDiv.appendChild(document.createElement("div"));
         const resetLabel = resetDiv.appendChild(document.createElement("h3"));
         resetLabel.textContent = "Reset";
+
         resetDiv.setAttribute("id", "reset-control");
         resetDiv.setAttribute("class", "reset-control");
 
