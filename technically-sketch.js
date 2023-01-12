@@ -1,54 +1,70 @@
 function sketch() {
   function interface() {
     function grid() {
-      const gridSelector = document.querySelector(".grid");
-      const gridCol = gridSelector.childNodes;
+      const gridSelector = document.getElementById("grid");
+      gridSelector.setAttribute("value", "off");
+      const gridCol = gridSelector.children;
+
+      function createGrid(n = 16) {
+        for (let i = 0; i < n; i++) {
+          let column = gridSelector.appendChild(document.createElement("div"));
+          column.setAttribute("class", "grid-container-item col");
+          for (let j = 0; j < n; j++) {
+            let rowItem = column.appendChild(document.createElement("div"));
+            rowItem.setAttribute("class", "grid-container-item row");
+          }
+        }
+      }
+      createGrid();
+
+
+
+      const gridStart = (evt) => {
+        const colorInput = document.querySelector(".color-input");
+        let color = colorInput.value; // gets the hex code for the color
+        evt.target.setAttribute("class", `grid-container-item row ${color}`);
+        evt.target.setAttribute("style", `background-color:${color}`);
+        console.log(color);
+      };
+
+      const gridEventListeners = () => {
+        for (let i = 0; i < gridCol.length; i++) {
+          let col = gridCol[i]; // parent Column
+          let rows = col.children
+
+          for (let j = 0; j < rows.childElementCount; j++) {
+            let row = rows[j]
+            console.log(row)
+            row.addEventListener("mouseenter", gridStart);
+          }
+        }
+      };
+
+      const removeGridEventListeners = () => {
+        for (let i = 0; i < gridCol.length; i++) {
+          let col = gridCol[i];
+          let rows = col.children;
+          for (let j = 0; j < rows.length; j++) {
+            let row = rows[j];
+            row.removeEventListener("mouseenter", gridStart);
+          }
+        }
+      };
 
       function controls() {
-
         function colors() {
-
-          gridStart = (evt) => {
-            const colorInput = document.querySelector(".color-input");
-            let color = colorInput.value; // gets the hex code for the color
-            evt.target.setAttribute(
-              "class",
-              `grid-container-item row ${color}`
-            );
-            evt.target.setAttribute("style", `background-color:${color}`);
-            console.log(color);
-          };
-
           function draw() {
-
-            const gridEventListeners = () => {
-              for (let i = 0; i < gridCol.length; i++) {
-                let col = gridCol[i];
-                let rows = col.childNodes;
-                rows.forEach((row) => {
-                  row.addEventListener("mouseenter", gridStart(evt));
-                });
-              }
-            };
             gridEventListeners();
-
           } // continous draw logic
 
           function stopDraw() {
-            const removeGridEventListeners = () => {
-              gridCol.forEach((col) => {
-                let rows = col.childNodes;
-                rows.forEach((row) => {
-                  row.removeEventListener("mouseenter", gridStart); // => {
-
-                });
-              });
-            };
             removeGridEventListeners();
-          } // removes/change event listeners so that boxes will not be drawn in mouseup
+          }
+          // removes/change event listeners so that boxes will not be drawn in mouseup
 
           function toggle() {
             const start = gridSelector.getAttribute("value");
+            console.log(start);
             if (start === "off") {
               gridSelector.setAttribute("value", "on");
               draw();
@@ -59,15 +75,17 @@ function sketch() {
           } // toggles between draw() and stopDraw() given a mouse click
 
           function toggleEvent() {
-            gridCol.forEach((col) => {
-              let rows = col.childNodes;
-              rows.forEach((row) => {
+            for (let i = 0; i < gridCol.length; i++) {
+              let col = gridCol[i];
+              let rows = col.children;
+              for (let j = 0; j < rows.length; j++) {
+                let row = rows[j];
                 row.addEventListener("click", () => {
                   console.log("toggle clicked");
                   toggle();
                 });
-              });
-            });
+              }
+            }
           }
           toggleEvent();
         }
@@ -81,23 +99,6 @@ function sketch() {
             }
           } // rmeoves the grid
 
-          function createGrid(n = 16) {
-            for (let i = 0; i < n; i++) {
-              let column = gridSelector.appendChild(document.createElement("div"));
-              column.setAttribute("class", "grid-container-item col");
-              for (let j = 0; j < n; j++) {
-                let rowItem = column.appendChild(
-                  document.createElement("div")
-                );
-                rowItem.setAttribute(
-                  "class",
-                  "grid-container-item row"
-                );
-
-              }
-            };
-          }; createGrid()
-
           function changeSize() {
             const gridInputs = () => {
               gridSizeInput.addEventListener("click", () => {
@@ -106,11 +107,10 @@ function sketch() {
                 deleteGrid();
                 createGrid(input);
                 toggle();
-
               });
             };
             gridInputs(); // return grid size input
-          };
+          }
           changeSize(); // adds event listeners to the grid
         }
         size(); // controls the size of the grid
