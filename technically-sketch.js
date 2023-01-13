@@ -240,7 +240,7 @@ function sketch() {
                         rainToggle();
                       });
                 }; rainToggleEvent()
-        }; rainbow()// paints with the colors of the rainbow
+        }; rainbow()
 
 
         function reset() {
